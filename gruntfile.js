@@ -10,13 +10,16 @@ module.exports = function(grunt) {
 			my_target: {
 				files: {
 					'components/script.js': ['components/js/*.js'],
-					'app/app.min.js': ['app/main/*.js', 'app/controllers/*.js', 'app/routes/*.js']
-				} //files
+					'app/app.min.js': ['app/main/*.js', 'app/controllers/*.js']
+				}, //files
+				options: {
+					mangle: false
+				}
 			} //my_target
 		}, //uglify
 		watch: {
 			scripts: {
-				files: ['components/js/*.js','app/main/*.js', 'app/controllers/*.js', 'app/routes/*.js'],
+				files: ['components/js/*.js','app/main/*.js', 'app/controllers/*.js'],
 				tasks: ['uglify'],
 				options: {
 					livereload: 35729,

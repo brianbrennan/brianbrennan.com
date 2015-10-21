@@ -1,18 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway|Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Lato:400,700|Droid+Serif:400italic);
 
 //----------------------------Fonts
-$headline		: 'Raleway', sans-serif;
-$body			: 'Open Sans', sans-serif;
+$headline		: 'Montserrat', sans-serif;
+$body			: 'Lato', sans-serif;
+$accent			: 'Droid Serif', serif;
 
 //----------------------------Color
 
+$black			: #222;
 $lighter-grey	: #efefef;
-$light-grey 	: #ccc;
-$green			: #4AC6B7;
-$dark			: #818D97;
-$darker 		: #484D51;
-$white			: #FFF;
-$overlay		: rgba(129,141,151,0.5);
+$grey			: #666;
 
 
 //----------------------------Spacing

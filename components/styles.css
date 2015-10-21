@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway|Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Lato:400,700|Droid+Serif:400italic);
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -32,3 +32,49 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.02em; }
+
+* {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.4; }
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.4; }
+
+section {
+  padding: 60px 0; }
+
+@media  (min-width: 1440px) {
+  .wrapper {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto; }
+    .wrapper:after {
+      content: " ";
+      display: block;
+      clear: both; } }
+
+.hero {
+  background-color: #efefef;
+  height: 100vh;
+  position: relative; }
+  .hero .focus {
+    top: 30vh;
+    position: absolute; }
+  .hero h2 {
+    font-size: 120px; }
+  .hero p {
+    padding-left: 8px; }
+
+.work-section h3 {
+  text-align: center;
+  font-size: 36px; }

@@ -1,1 +1,1 @@
-S.ready(function(){});
+S.ready(function(){function iosVhHeightBug(){var height=s(window).css("height")[0];s(".hero").css("min-height",height)}var iOS=navigator.userAgent.match(/(iPod|iPhone|iPad)/);iOS&&(iosVhHeightBug(),s(window).on("resize",iosVhHeightBug()))});

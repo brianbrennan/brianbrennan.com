@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 				}
 			},//sass
 			html: {
-				files: ['*.html'],
+				files: ['*.html', 'app/views/*.html'],
 				options: {
 					livereload: 35729,
 					spawn: false

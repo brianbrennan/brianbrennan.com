@@ -1,0 +1,30 @@
+[
+	{
+		"skill": "HTML",
+		"description": "HTML is the backbone of website content, and I wouldn’t be a very good developer if I wasn’t an expert at it. I use HTML5 in most of my projects, and am sure to use cross browser compatible elements whenever I can. "
+	},
+	{
+		"skill": "CSS",
+		"description": "CSS is great. You know what’s even better? SASS! While I am an expert at using CSS3, and it is in nearly all of my projects, I actually write most of it in SASS. It’s faster, easier, more flexible."
+	},
+	{
+		"skill": "JavaScript",
+		"description": "JavaScript is my go-to scripting language. I try and use javascript to solve any programming problem I can. I try to write plain JavaScript whenever I can, even going so far as writing my own alternative to JQuery for the performance. I use node every day in the form of task runners, and have even written modules for it. I’ve used frameworks for projects (the tool showing this is actually written in Angular). I like to say I’m an expert at JavaScript."
+	},
+	{
+		"skill": "JQuery",
+		"description": "While I try to avoid the performance hog that is JQuery as much as possible, I am an expert at using it when necessary. I’ve used it on many sites, and have even gone so far as to read the source code and create my own JQuery alternative for day-to-day DOM manipulation."
+	},
+	{
+		"skill": "PHP",
+		"description": "While not my go-to scripting language, I have used PHP for projects in the past. I’ve mainly written PHP for client-side-esque operations, but have dabbled with interacting with the database through scripts, object oriented PHP, and other server-side integrations. My main use for PHP is WordPress development."
+	},
+	{
+		"skill": "WordPress",
+		"description": "I’ve made several custom WordPress themes for sites in the past, including the blog section for this site. Building for an all inclusive CMS certainly makes other aspects of development much easier. "
+	},
+	{
+		"skill": "ASP.NET",
+		"description": "Though I haven’t developed using .NET before, I have been involved with large sites that have used the .NET framework as their backend."
+	}
+]

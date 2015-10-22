@@ -7,6 +7,7 @@
 @import "reset";
 @import "variables";
 @import "standard";
+@import "animations";
 
 //------------------------------------------------------stylesheets
 
@@ -67,13 +68,17 @@ footer{
 	width:100%;
 	padding:$reg 0;
 
+	.wrapper{
+		@include layout(split);
+	}
+
 	.footer-section{
+		box-sizing:border-box;
 		min-height:138px;
 		@include span(3 of 9);
 		border-right:1px solid $lighter-grey;
 
 		&:nth-child(3n){
-			@include last();
 			border-right:none;
 		}
 	}
@@ -100,6 +105,7 @@ footer{
 		font-family:$socicon;
 		font-size:$lgFontSize;
 		text-align:center;
+		margin-left:-($reg);
 
 		span{
 			display:inline-block;
@@ -119,9 +125,21 @@ footer{
 	.recent-post{
 		display:inline-block;
 		padding:0 $sm;
+		h5{
+			margin-bottom:$tny;
+			color:$light-grey;
+		}
 		h4{
 			font-size:$lgFontSize;
 			color:$grey;
+			a{
+				color:inherit;
+				text-decoration:none;
+
+				&:hover{
+					color:$black;
+				}
+			}
 		}
 
 		span{

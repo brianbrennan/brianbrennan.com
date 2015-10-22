@@ -32,6 +32,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: 'Socicon';
+  src: url('fonts/socicon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  text-transform: initial; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -41,17 +48,34 @@ h1, h2, h3, h4, h5, h6 {
 * {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
-  color: #666;
+  color: #989898;
   line-height: 1.4; }
 
 p {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
-  color: #666;
+  color: #989898;
   line-height: 1.4; }
 
 section {
   padding: 60px 0; }
+
+* {
+  color: #989898; }
+
+a {
+  text-decoration: underline;
+  color: #61D2B4; }
+
+blockquote {
+  margin: 30px 60px;
+  font-size: 20px;
+  font-family: 'Droid Serif', serif;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 30px;
+  color: #61D2B4;
+  border-left: 1px solid #61D2B4; }
 
 @media  (min-width: 1440px) {
   .wrapper {
@@ -62,6 +86,79 @@ section {
       content: " ";
       display: block;
       clear: both; } }
+
+header {
+  font-family: 'Lato', sans-serif;
+  position: fixed;
+  z-index: 100;
+  width: 100%; }
+  header nav {
+    float: right; }
+    header nav li {
+      display: inline-block;
+      padding: 30px; }
+      header nav li a {
+        color: #989898;
+        text-decoration: none; }
+        header nav li a:hover {
+          color: #61D2B4; }
+
+footer {
+  width: 100%;
+  padding: 30px 0; }
+  footer .footer-section {
+    min-height: 138px;
+    width: 31.8181818182%;
+    float: left;
+    margin-right: 2.2727272727%;
+    border-right: 1px solid #efefef; }
+    footer .footer-section:nth-child(3n) {
+      float: right;
+      margin-right: 0;
+      border-right: none; }
+  footer li {
+    font-family: 'Lato', sans-serif;
+    margin: 15px 0;
+    width: 49.1525423729%;
+    float: left;
+    margin-right: 1.6949152542%; }
+    footer li:nth-child(2n) {
+      float: right;
+      margin-right: 0; }
+    footer li a {
+      color: #989898;
+      text-decoration: none; }
+      footer li a:hover {
+        color: #222; }
+  footer .social {
+    font-family: 'Socicon';
+    font-size: 36px;
+    text-align: center; }
+    footer .social span {
+      display: inline-block;
+      margin: 60px 30px; }
+      footer .social span a {
+        text-decoration: none;
+        color: #ddd; }
+        footer .social span a:hover {
+          color: #61D2B4; }
+  footer .recent-post {
+    display: inline-block;
+    padding: 0 15px; }
+    footer .recent-post h4 {
+      font-size: 36px;
+      color: #989898; }
+    footer .recent-post span {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      margin-top: 8px; }
+
+.divide {
+  clear: both;
+  width: 300px;
+  height: 1px;
+  background-color: #efefef;
+  margin: 30px auto; }
 
 .hero {
   background-color: #efefef;
@@ -75,6 +172,23 @@ section {
   .hero p {
     padding-left: 8px; }
 
-.work-section h3 {
+.work-section h3, .about-section h3, .process-section h3 {
   text-align: center;
   font-size: 36px; }
+
+.page {
+  padding-top: 120px; }
+  .page .content {
+    width: 700px;
+    margin: auto; }
+  .page p {
+    margin: 30px 0;
+    line-height: 1.6; }
+  .page h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 48px; }
+  .page h3 {
+    margin-bottom: -15px;
+    font-size: 20px; }
+

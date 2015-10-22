@@ -10,10 +10,134 @@
 
 //------------------------------------------------------stylesheets
 
+*{
+	color:$grey;
+}
+
+a{
+	text-decoration:underline;
+	color:$green;
+}
+
+blockquote{
+	margin:$reg $lg;
+	font-size:$medFontSize;
+	font-family:$accent;
+	line-height:1.6;
+	position:relative;
+	padding-left:$reg;
+	color:$green;
+	border-left:1px solid $green;
+}
+
+//--------------------------General Pieces
+
 .wrapper{
 	@include breakpoint(1440px){
 		@include container(1140px);
 	}
+}
+
+header{
+	font-family:$body;
+	position:fixed;
+	z-index:100;
+	width:100%;
+	nav{
+		float:right;
+
+		li{
+			display:inline-block;
+			padding:$reg;
+
+			a{
+				color:$grey;
+				text-decoration:none;
+
+				&:hover{
+					color:$green;
+				}
+			}
+		}
+	}
+}
+
+
+footer{
+	width:100%;
+	padding:$reg 0;
+
+	.footer-section{
+		min-height:138px;
+		@include span(3 of 9);
+		border-right:1px solid $lighter-grey;
+
+		&:nth-child(3n){
+			@include last();
+			border-right:none;
+		}
+	}
+
+	li{
+		font-family:$body;
+		margin:$sm 0;
+		@include span(6 of 12);
+		&:nth-child(2n){
+			@include last();
+		}
+
+		a{
+			color:$grey;
+			text-decoration:none;
+
+			&:hover{
+				color:$black;
+			}
+		}
+	}
+
+	.social{
+		font-family:$socicon;
+		font-size:$lgFontSize;
+		text-align:center;
+
+		span{
+			display:inline-block;
+			margin:$lg $reg;
+
+			a{
+				text-decoration:none;
+				color:$light-grey;
+
+				&:hover{
+					color:$green;
+				}
+			}
+		}
+	}
+
+	.recent-post{
+		display:inline-block;
+		padding:0 $sm;
+		h4{
+			font-size:$lgFontSize;
+			color:$grey;
+		}
+
+		span{
+			display:block;
+			font-family:$body;
+			margin-top:$tny;
+		}
+	}
+}
+
+.divide{
+	clear:both;
+	width:300px;
+	height:1px;
+	background-color:$lighter-grey;
+	margin:$reg auto;
 }
 
 
@@ -37,9 +161,43 @@
 	}
 }
 
-.work-section{
+.work-section, .about-section, .process-section{
 	h3{
 		text-align:center;
 		font-size:$lgFontSize;
 	}
 }
+
+//-------------------------All Pages
+
+.page{
+	padding-top:$xxl;
+
+	.content{
+		width:700px;
+		margin:auto;
+	}
+
+	p{
+		margin:$reg 0;
+		line-height:1.6;
+	}
+
+	h2{
+		text-align:center;
+		margin-bottom:$sm;
+		font-size:$xlFontSize;
+	}
+
+	h3{
+		margin-bottom:-($sm);
+		font-size: $medFontSize;
+	}
+}
+
+//-------------------------About Page
+
+.about{
+
+}
+

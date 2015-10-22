@@ -1,15 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:700|Lato:400,700|Droid+Serif:400italic);
 
 //----------------------------Fonts
+
+//----------------Font Face
+
+@font-face{
+	font-family:'Socicon';
+	src: url('fonts/socicon.woff') format('woff');
+	font-weight: normal;
+    font-style: normal;
+    text-transform: initial;
+}
+
+//---------------Variables
+
 $headline		: 'Montserrat', sans-serif;
 $body			: 'Lato', sans-serif;
 $accent			: 'Droid Serif', serif;
+$socicon		: 'Socicon';
+
+
 
 //----------------------------Color
 
 $black			: #222;
+$light-grey 	: #ddd;
 $lighter-grey	: #efefef;
-$grey			: #666;
+$grey			: #989898;
+$green			: #61D2B4;
 
 
 //----------------------------Spacing
@@ -23,7 +41,9 @@ $lg 			:60px;
 $xl				:90px;
 $xxl			:120px;
 
+
 //---------------------------Font Size Variables
+
 $minFontSize:	10px;
 $tnyFontSize:	12px;
 $smFontSize:	14px;

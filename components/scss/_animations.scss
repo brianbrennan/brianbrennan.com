@@ -17,3 +17,23 @@
 .view.ng-leave-active{
 	opacity: 0;
 }
+
+//-------------------------Skills Animation
+
+.skill.ng-enter{
+	@include transition(0.3s 0.3s);
+	opacity:0;
+}
+
+.skill.ng-enter-active{
+	opacity:1;
+}
+
+.skill.ng-leave{
+	@include transition( 0.3s);
+	opacity:1;
+}
+
+.skill.ng-leave-active{
+	opacity: 0;
+}

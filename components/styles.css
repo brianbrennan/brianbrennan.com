@@ -78,8 +78,28 @@ section {
 .view.ng-leave-active {
   opacity: 0; }
 
+.skill.ng-enter {
+  -webkit-transition: 0.3s 0.3s;
+  -moz-transition: 0.3s 0.3s;
+  transition: 0.3s 0.3s;
+  opacity: 0; }
+
+.skill.ng-enter-active {
+  opacity: 1; }
+
+.skill.ng-leave {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 1; }
+
+.skill.ng-leave-active {
+  opacity: 0; }
+
 * {
   color: #989898; }
+  *:focus {
+    outline: none; }
 
 a {
   text-decoration: underline;
@@ -187,6 +207,49 @@ footer {
   background-color: #efefef;
   margin: 30px auto; }
 
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  color: #989898;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s; }
+  input[type="text"]::-webkit-input-placeholder {
+    color: #989898;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    transition: 0.2s; }
+  input[type="text"]:-moz-placeholder {
+    /* Firefox 18- */
+    color: #989898;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    transition: 0.2s; }
+  input[type="text"]::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #989898;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    transition: 0.2s; }
+  input[type="text"]:-ms-input-placeholder {
+    color: #989898;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    transition: 0.2s; }
+  input[type="text"]:focus {
+    border-color: #61D2B4;
+    color: #61D2B4; }
+    input[type="text"]:focus::-webkit-input-placeholder {
+      color: #61D2B4; }
+    input[type="text"]:focus:-moz-placeholder {
+      /* Firefox 18- */
+      color: #61D2B4; }
+    input[type="text"]:focus::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #61D2B4; }
+    input[type="text"]:focus:-ms-input-placeholder {
+      color: #61D2B4; }
+
 .hero {
   background-color: #efefef;
   height: 100vh;
@@ -219,3 +282,12 @@ footer {
     margin-bottom: -15px;
     font-size: 20px; }
 
+.skills .tool {
+  width: 600px;
+  margin: auto; }
+  .skills .tool input {
+    width: 300px;
+    display: block;
+    margin: 15px auto; }
+  .skills .tool h4 {
+    margin-bottom: -15px; }

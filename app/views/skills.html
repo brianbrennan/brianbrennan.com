@@ -1,9 +1,16 @@
-<div class=" skills page">
+<div class="skills page">
 	<div class="wrapper">
 		<h2>Skills</h2>
 
-		<div class="content">
-			<input type="text">
+		<div class="tool">
+			<input type="text" ng-model="skillInput" placeholder="See if I know a skill">
+
+			<div ng-repeat="skill in skills | filter: skillInput">
+				<div class="skill" ng-if="skillInput">
+					<h4>{{skill.skill}}</h4>
+					<p>{{skill.description}}</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

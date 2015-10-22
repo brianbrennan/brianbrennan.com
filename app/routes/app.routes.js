@@ -12,6 +12,8 @@ route.config(function($routeProvider, $locationProvider){
 	})
 
 	.when('/skills',{
-		templateUrl: 'app/views/skills.html'
+		templateUrl: 'app/views/skills.html',
+		controller: 'skillsController',
+		controllersAs: 'skills'
 	});
 });

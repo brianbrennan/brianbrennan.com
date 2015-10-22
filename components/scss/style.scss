@@ -13,6 +13,10 @@
 
 *{
 	color:$grey;
+
+	&:focus{
+		outline:none;
+	}
 }
 
 a{
@@ -158,6 +162,55 @@ footer{
 	margin:$reg auto;
 }
 
+input[type="text"]{
+	padding:$tny;
+	border:1px solid $light-grey;
+	color:$grey;
+
+	&::-webkit-input-placeholder {
+		color: $grey;
+		@include transition(0.2s);
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+		color: $grey;
+		@include transition(0.2s);
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+		color: $grey;
+		@include transition(0.2s);  
+	}
+
+	&:-ms-input-placeholder {  
+		color: $grey;
+		@include transition(0.2s);  
+	}
+
+	@include transition(0.2s);
+
+	&:focus{
+		border-color:$green;
+		color:$green;
+
+		&::-webkit-input-placeholder {
+			color: $green;
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+			color: $green;  
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+			color: $green;  
+		}
+
+		&:-ms-input-placeholder {  
+			color: $green;  
+		}
+	}
+}
+
 
 //--------------------------Home Page
 .hero{
@@ -217,5 +270,25 @@ footer{
 
 .about{
 
+}
+
+//-------------------------Skills Page
+
+.skills{
+
+	.tool{
+		width:600px;
+		margin:auto;
+
+		input{
+			width:300px;
+			display:block;
+			margin:$sm auto;
+		}
+
+		h4{
+			margin-bottom:-($sm);
+		}
+	}
 }
 

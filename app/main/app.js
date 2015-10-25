@@ -1,2 +1,2 @@
-var myApp = angular.module('myApp', ['app.routes']);
+var myApp = angular.module('myApp', ['app.routes', 'contactCtrl']);
 

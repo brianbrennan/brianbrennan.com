@@ -9,5 +9,9 @@ route.config(function($routeProvider, $locationProvider){
 
 	.when('/about',{
 		templateUrl: 'app/views/about.html'
+	})
+
+	.when('/contact', {
+		templateUrl: 'app/views/contact.html'
 	});
 });

@@ -62,6 +62,8 @@ section {
 
 * {
   color: #989898; }
+  *:focus {
+    outline: none; }
 
 a {
   text-decoration: underline;
@@ -192,3 +194,33 @@ footer {
     margin-bottom: -15px;
     font-size: 20px; }
 
+.contact input[type="text"], .contact input[type="email"], .contact textarea, .contact-section input[type="text"], .contact-section input[type="email"], .contact-section textarea {
+  box-sizing: border-box;
+  padding: 3px 8px;
+  border: 1px solid #989898;
+  color: #989898; }
+  .contact input[type="text"]:focus, .contact input[type="email"]:focus, .contact textarea:focus, .contact-section input[type="text"]:focus, .contact-section input[type="email"]:focus, .contact-section textarea:focus {
+    border-color: #222; }
+.contact input.ng-invalid.ng-touched, .contact textarea.ng-invalid.ng-touched, .contact-section input.ng-invalid.ng-touched, .contact-section textarea.ng-invalid.ng-touched {
+  border-color: red; }
+.contact input.ng-valid.ng-touched, .contact textarea.ng-valid.ng-touched, .contact-section input.ng-valid.ng-touched, .contact-section textarea.ng-valid.ng-touched {
+  border-color: #61D2B4; }
+.contact input[type="text"], .contact input[type="email"], .contact-section input[type="text"], .contact-section input[type="email"] {
+  margin-bottom: 30px;
+  width: 47.3684210526%;
+  float: left;
+  margin-right: 5.2631578947%; }
+.contact input[type="email"], .contact-section input[type="email"] {
+  float: right;
+  margin-right: 0; }
+.contact textarea, .contact-section textarea {
+  margin-bottom: 30px;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  resize: none; }
+.contact button[type="submit"], .contact-section button[type="submit"] {
+  width: 47.3684210526%;
+  float: left;
+  margin-right: 5.2631578947%; }

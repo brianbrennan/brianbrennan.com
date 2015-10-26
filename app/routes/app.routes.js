@@ -20,5 +20,9 @@ route.config(function($routeProvider, $locationProvider){
 
 	.when('/contact', {
 		templateUrl: 'app/views/contact.html'
+	})
+
+	.when('/aba-retirement', {
+		templateUrl: 'app/views/work/aba-retirement.html'
 	});
 });

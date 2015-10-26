@@ -181,7 +181,7 @@ footer{
 	margin:$reg auto;
 }
 
-input[type="text"]{
+input[type="text"],input[type="email"]{
 	padding:$tny;
 	border:1px solid $light-grey;
 	color:$grey;
@@ -227,6 +227,18 @@ input[type="text"]{
 		&:-ms-input-placeholder {  
 			color: $green;  
 		}
+	}
+}
+
+button[type="submit"]{
+	border:none;
+	background-color:$black;
+	color:white;
+	padding:$tny $sm;
+	cursor:pointer;
+
+	&:hover{
+		color:$green;
 	}
 }
 
@@ -314,28 +326,91 @@ input[type="text"]{
 		h4{
 			margin-bottom:-($sm);
 		}
+	}
+}
 
 
 //------------------------Contact Page
 
 .contact, .contact-section{
+	form{
+		padding:$sm 0;
+	}
+
 	input[type="text"],input[type="email"], textarea{
 		box-sizing:border-box;
 		padding:$mic $tny;
 		border:1px solid $grey;
 		color:$grey;
 
+		@include transition(0.2s);
+
+		&::-webkit-input-placeholder {
+			color: $grey;
+			@include transition(0.2s);
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+			color: $grey;
+			@include transition(0.2s);
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+			color: $grey;
+			@include transition(0.2s);  
+		}
+
+		&:-ms-input-placeholder {  
+			color: $grey;
+			@include transition(0.2s);  
+		}
+
 		&:focus{
 			border-color:$black;
 		}
 	}
 
-	input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+	input.ng-invalid.ng-touched.ng-dirty, textarea.ng-invalid.ng-touched.ng-dirty{
 		border-color:red;
+		color:red;
+
+		&::-webkit-input-placeholder {
+			color: red;
+			@include transition(0.2s);
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+			color: red;
+			@include transition(0.2s);
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+			color: red;
+			@include transition(0.2s);  
+		}
+
+		&:-ms-input-placeholder {  
+			color: red;
+			@include transition(0.2s);  
+		}
+
+		&:focus{
+			border-color:red;
+			color:red;
+
+			&::selection{
+				background-color:red;
+			}
+		}
 	}
 
-	input.ng-valid.ng-touched, textarea.ng-valid.ng-touched{
+	input.ng-valid.ng-touched.ng-dirty, textarea.ng-valid.ng-touched.ng-dirty{
 		border-color:$green;
+		color:$green;
+
+		&:focus{
+			border-color:$green;
+		}
 	}
 
 	input[type="text"],input[type="email"]{
@@ -351,7 +426,9 @@ input[type="text"]{
 		resize:none;
 	}
 	button[type="submit"]{
-		@include span(2 at 2);
+		box-sizing:border-box;
+		width:50%;
+		margin-left:25%
 	}
 }
 

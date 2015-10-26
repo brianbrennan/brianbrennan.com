@@ -9,13 +9,13 @@
 	</div>
 </div>
 
-<section class="work-section">
+<section class="work-section" ng-controller="workController as work">
 	<div class="wrapper">
 		<h3>Recent Work</h3>
-		<div class="pieces">
-			<div class="piece"></div>
-			<div class="piece"></div>
-			<div class="piece"></div>
+		<div class="pieces" ng-repeat="piece in works">
+			<div class="piece">
+				test
+			</div>
 		</div>
 	</div>
 </section>

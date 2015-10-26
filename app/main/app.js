@@ -1,3 +1,3 @@
 
-var myApp = angular.module('myApp', ['app.routes', 'ngAnimate','skillsCtrl', 'contactCtrl']);
+var myApp = angular.module('myApp', ['app.routes', 'ngAnimate','skillsCtrl', 'contactCtrl', 'workCtrl']);
 

@@ -2,7 +2,7 @@
 	{
 		"id":1,
 		"name":"ABA Retirement",
-		"thumbnail": "",
+		"thumbnail": "components/img/abaretirement/logo.png",
 		"images": "",
 		"url": "http://new.abaretirement.com",
 		"page":"/aba-retirement",
@@ -12,7 +12,7 @@
 	{
 		"id":2,
 		"name": "Stonehill Palette",
-		"thumbnail": "",
+		"thumbnail": "components/img/stonehill-palette/logo.png",
 		"images": "",
 		"url": "http://stonehillpalette.com",
 		"page": "/stonehill-palette",
@@ -22,7 +22,7 @@
 	{
 		"id":3,
 		"name": "Enigma.js",
-		"thumbnail":"",
+		"thumbnail":"components/img/enigma-js/logo.png",
 		"images":"",
 		"url":"https://www.npmjs.com/package/enigma.js",
 		"page": "/enigma-js",
@@ -32,7 +32,7 @@
 	{
 		"id":4,
 		"name": "Slimpickin",
-		"thumbnail":"",
+		"thumbnail":"components/img/slimpickin/logo.png",
 		"images":"",
 		"url":"https://github.com/brianbrennan/slimpickin",
 		"page": "/slimpickin",
@@ -42,7 +42,7 @@
 	{
 		"id":5,
 		"name": "Enigmate",
-		"thumbnail":"",
+		"thumbnail":"components/img/enigmate/logo.png",
 		"images":"",
 		"url":"https://github.com/brianbrennan/enigmate",
 		"page": "/enigmate",

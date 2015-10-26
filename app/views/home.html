@@ -15,7 +15,7 @@
 		<div class="pieces" ng-repeat="piece in works | orderBy: 'id':true | limitTo: 4 ">
 
 			<div class="piece">
-				<a href="/#{{piece.page}}"><img src="" alt=""></a>
+				<a href="/#{{piece.page}}"><img src="{{piece.thumbnail}}" alt=""></a>
 			</div>
 		</div>
 

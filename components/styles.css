@@ -313,8 +313,10 @@ button[type="submit"] {
       margin-left: 2.5%;
       margin-right: 2.5%; }
       .work-section .pieces .piece img {
-        height: 110px;
-        width: 100%; }
+        display: block;
+        max-height: 60px;
+        max-width: 100%;
+        margin: auto; }
   .work-section .view-all {
     display: block;
     width: 90px;
@@ -379,8 +381,9 @@ button[type="submit"] {
     margin-left: 2.5%;
     margin-right: 2.5%; }
     .work .pieces .piece img {
-      height: 110px;
-      width: 100%; }
+      display: block;
+      height: 60px;
+      margin: auto; }
 
 .contact form, .contact-section form {
   padding: 15px 0; }

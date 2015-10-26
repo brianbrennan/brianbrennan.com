@@ -39,6 +39,6 @@ route.config(function($routeProvider, $locationProvider){
 	})
 
 	.when('/enigmate', {
-		templateUrl: 'app/views/work/enigmate'
+		templateUrl: 'app/views/work/enigmate.html'
 	});
 });

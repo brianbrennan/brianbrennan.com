@@ -1,0 +1,12 @@
+<div class="work page" ng-controller="workController as work">
+	<div class="wrapper">
+		<h2>Work</h2>
+
+		<div class="pieces" ng-repeat="piece in works | orderBy: 'id':true">
+			<div class="piece">
+				<a href="/#{{piece.page}}"><img src="" alt=""></a>
+			</div>
+		</div>
+
+	</div>
+</div>

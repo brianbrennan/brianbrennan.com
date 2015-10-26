@@ -11,6 +11,10 @@ route.config(function($routeProvider, $locationProvider){
 		templateUrl: 'app/views/about.html'
 	})
 
+	.when('/work', {
+		templateUrl: 'app/views/work.html'
+	})
+
 
 	.when('/skills',{
 		templateUrl: 'app/views/skills.html',

@@ -13,6 +13,7 @@
 
 *{
 	color:$grey;
+	font-family:$body;
 
 	&:focus{
 		outline:none;
@@ -43,6 +44,8 @@ blockquote{
 //--------------------------General Pieces
 
 .wrapper{
+	position:relative;
+
 	@include breakpoint(1440px){
 		@include container(1140px);
 	}
@@ -53,6 +56,9 @@ header{
 	position:fixed;
 	z-index:100;
 	width:100%;
+	padding-bottom:$med;
+	@include linear-gradient(white 50%, transparent, $fallback: transparent);
+	@include transition(0.2s);
 	
 	a{
 		#logo{
@@ -84,6 +90,10 @@ header{
 			}
 		}
 	}
+}
+
+header.dark{
+	@include linear-gradient(transparent, transparent, $fallback: transparent);
 }
 
 
@@ -132,7 +142,7 @@ footer{
 
 		span{
 			display:inline-block;
-			margin:$lg $reg;
+			margin:$med $reg;
 
 			a{
 				text-decoration:none;
@@ -276,6 +286,7 @@ button[type="submit"]{
 }
 
 .work-section{
+	padding-top:$lg + $sm + $tny;
 	.pieces{
 		margin-top:$lg;
 
@@ -288,12 +299,49 @@ button[type="submit"]{
 			}
 		}
 	}
+
+	.view-all{
+		display:block;
+		width:$xl;
+		margin:auto;
+		text-align:center;
+		clear:both;
+		padding-top:$reg;
+	}
+}
+
+.process-section{
+	h4{
+		margin-top:$lg;
+		font-size: $xxlFontSize;
+	}
+
+	span{
+		font-family: $body;
+	}
+
+	.content{
+		width:800px;
+	}
+
+	.left{
+		@include span(2);
+	}
+
+	.right{
+		@include span(2);
+
+		p{
+			margin-top:$lg;
+		}
+	}
 }
 
 //-------------------------All Pages
 
 .page{
 	padding-top:$xxl;
+	min-height:60vh;
 
 	.content{
 		width:700px;
@@ -340,6 +388,24 @@ button[type="submit"]{
 
 		h4{
 			margin-bottom:-($sm);
+		}
+	}
+}
+
+//-----------------------Work Page
+
+.work{
+	.pieces{
+		margin-top:$lg;
+
+		.piece{
+			margin-bottom:$lg;
+			@include span(1);
+
+			img{
+				height:110px;
+				width:100%;
+			}
 		}
 	}
 }
@@ -444,6 +510,32 @@ button[type="submit"]{
 		box-sizing:border-box;
 		width:50%;
 		margin-left:25%
+	}
+}
+
+//-------------------------------------Work Pages
+
+.work-page{
+	.prev,.next{
+		position:absolute;
+		font-family:$body;
+	}
+
+	.prev{
+		left:0;
+	}
+
+	.next{
+		right:0;
+	}
+
+	.date{
+		text-align:center;
+		display:block;
+	}
+
+	span{
+		font-family:$body;
 	}
 }
 

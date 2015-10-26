@@ -17,6 +17,11 @@
 	&:focus{
 		outline:none;
 	}
+
+	::selection{
+		background:$green;
+		color:white;
+	}
 }
 
 a{
@@ -48,6 +53,20 @@ header{
 	position:fixed;
 	z-index:100;
 	width:100%;
+	
+	a{
+		#logo{
+			@include span(1 of 8);
+			margin-top:$sm;
+		}
+
+		&:hover{
+			path{
+				fill:$green;
+			}
+		}
+	}
+
 	nav{
 		float:right;
 
@@ -232,10 +251,15 @@ input[type="text"]{
 	}
 }
 
-.work-section, .about-section, .process-section{
+.work-section, .about-section, .process-section, .contact-section{
 	h3{
 		text-align:center;
 		font-size:$lgFontSize;
+	}
+
+	.content{
+		margin:$reg auto;
+		width:600px;
 	}
 }
 

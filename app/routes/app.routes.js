@@ -32,5 +32,13 @@ route.config(function($routeProvider, $locationProvider){
 
 	.when('/enigma-js', {
 		templateUrl: 'app/views/work/enigma-js.html'
+	})
+
+	.when('/slimpickin', {
+		templateUrl: 'app/views/work/slimpickin.html'
+	})
+
+	.when('/enigmate', {
+		templateUrl: 'app/views/work/enigmate'
 	});
 });

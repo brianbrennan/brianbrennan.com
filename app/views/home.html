@@ -12,7 +12,7 @@
 <section class="work-section" ng-controller="workController as work">
 	<div class="wrapper">
 		<h3>Recent Work</h3>
-		<div class="pieces" ng-repeat="piece in works | limitTo: 4">
+		<div class="pieces" ng-repeat="piece in works | limitTo: 4 | orderBy: 'piece.id': reverse ">
 
 			<div class="piece">
 				<a href="/#{{piece.page}}"><img src="" alt=""></a>

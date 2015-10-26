@@ -28,5 +28,25 @@
 		"page": "/enigma-js",
 		"description": "",
 		"tags": ["Node","Javascript","NPM"]
+	},
+	{
+		"id":4,
+		"name": "Slimpickin",
+		"thumbnail":"",
+		"images":"",
+		"url":"https://github.com/brianbrennan/slimpickin",
+		"page": "/slimpickin",
+		"description": "",
+		"tags": ["Javascript", "JQuery"]
+	},
+	{
+		"id":5,
+		"name": "Enigmate",
+		"thumbnail":"",
+		"images":"",
+		"url":"https://github.com/brianbrennan/enigmate",
+		"page": "/enigmate",
+		"description": "",
+		"tags": ["Javascript", "Electron", "HTML", "CSS", "Sass", "Desktop Development", "Web Development"]
 	}
 ]

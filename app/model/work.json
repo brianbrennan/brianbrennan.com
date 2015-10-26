@@ -4,8 +4,29 @@
 		"name":"ABA Retirement",
 		"thumbnail": "",
 		"images": "",
-		"url": "htts://new.abaretirement.com",
+		"url": "http://new.abaretirement.com",
 		"page":"/aba-retirement",
-		"description":""
+		"description":"",
+		"tags": ["Web Design", "Photoshop", "Illustrator", "Creative Cloud", "Creative Suite"]
+	},
+	{
+		"id":2,
+		"name": "Stonehill Palette",
+		"thumbnail": "",
+		"images": "",
+		"url": "http://stonehillpalette.com",
+		"page": "/stonehill-palette",
+		"description": "",
+		"tags": ["Web Development", "JavaScript", "Sass", "CSS", "JQuery"]
+	},
+	{
+		"id":3,
+		"name": "Enigma.js",
+		"thumbnail":"",
+		"images":"",
+		"url":"https://www.npmjs.com/package/enigma.js",
+		"page": "/enigma-js",
+		"description": "",
+		"tags": ["Node","Javascript","NPM"]
 	}
 ]

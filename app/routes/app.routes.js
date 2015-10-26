@@ -24,5 +24,13 @@ route.config(function($routeProvider, $locationProvider){
 
 	.when('/aba-retirement', {
 		templateUrl: 'app/views/work/aba-retirement.html'
+	})
+
+	.when('/stonehill-palette', {
+		templateUrl: 'app/views/work/stonehill-palette.html'
+	})
+
+	.when('/enigma-js', {
+		templateUrl: 'app/views/work/enigma-js.html'
 	});
 });

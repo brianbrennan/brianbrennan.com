@@ -275,6 +275,21 @@ button[type="submit"]{
 	}
 }
 
+.work-section{
+	.pieces{
+		margin-top:$lg;
+
+		.piece{
+			@include span(1);
+
+			img{
+				height:110px;
+				width:100%;
+			}
+		}
+	}
+}
+
 //-------------------------All Pages
 
 .page{

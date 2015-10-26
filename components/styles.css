@@ -288,6 +288,17 @@ button[type="submit"] {
   margin: 30px auto;
   width: 600px; }
 
+.work-section .pieces {
+  margin-top: 60px; }
+  .work-section .pieces .piece {
+    width: 20%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%; }
+    .work-section .pieces .piece img {
+      height: 110px;
+      width: 100%; }
+
 .page {
   padding-top: 120px; }
   .page .content {

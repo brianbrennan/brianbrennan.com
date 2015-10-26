@@ -30,6 +30,10 @@ route.config(function($routeProvider, $locationProvider){
 		templateUrl: 'app/views/work/aba-retirement.html'
 	})
 
+	.when('/cards-and-pockets', {
+		templateUrl: 'app/views/work/cards-and-pockets.html'
+	})
+
 	.when('/stonehill-palette', {
 		templateUrl: 'app/views/work/stonehill-palette.html'
 	})

@@ -2,8 +2,8 @@
 	<div class="wrapper">
 		<h2>Work</h2>
 
-		<div class="pieces" ng-repeat="piece in works | orderBy: 'id':true">
-			<div class="piece">
+		<div class="pieces">
+			<div class="piece" ng-repeat="piece in works | orderBy: 'id':true">
 				<a href="/#{{piece.page}}"><img src="{{piece.thumbnail}}" alt=""></a>
 			</div>
 		</div>

@@ -406,7 +406,8 @@ button[type="submit"]{
 
 			img{
 				display:block;
-				height:60px;
+				max-height:60px;
+				max-width:100%;
 				margin:auto;
 			}
 		}
@@ -541,4 +542,29 @@ button[type="submit"]{
 		font-family:$body;
 	}
 }
+
+//-----------------------------------------Specific Work Pages
+
+
+//-------------------------ABA Retirement
+
+.aba{
+	.aba-logo{
+		text-align:center;
+		display:block;
+		margin:auto;
+	}
+}
+
+//------------------------Cards & Pockets
+
+.cards-and-pockets{
+	.candp-logo{
+		text-align:center;
+		display:block;
+		margin:auto;
+	}
+}
+
+
 

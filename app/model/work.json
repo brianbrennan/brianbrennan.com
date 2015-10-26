@@ -48,5 +48,15 @@
 		"page": "/enigmate",
 		"description": "",
 		"tags": ["Javascript", "Electron", "HTML", "CSS", "Sass", "Desktop Development", "Web Development"]
+	},
+	{
+		"id": 6,
+		"name": "Cards & Pockets",
+		"thumbnail": "components/img/cardsandpockets/logo.gif",
+		"images":"",
+		"url":"http://new.cardsandpockets.com",
+		"page":"/cards-and-pockets",
+		"description":"",
+		"tags":["JavaScript","JQuery","Web Design","Web Development","Sass","HTML","CSS",".NET","SQL"]
 	}
 ]

@@ -64,6 +64,9 @@ section {
   color: #989898; }
   *:focus {
     outline: none; }
+  * ::selection {
+    background: #61D2B4;
+    color: white; }
 
 a {
   text-decoration: underline;
@@ -94,6 +97,13 @@ header {
   position: fixed;
   z-index: 100;
   width: 100%; }
+  header a #logo {
+    width: 10.2564102564%;
+    float: left;
+    margin-right: 2.5641025641%;
+    margin-top: 15px; }
+  header a:hover path {
+    fill: #61D2B4; }
   header nav {
     float: right; }
     header nav li {
@@ -174,9 +184,12 @@ footer {
   .hero p {
     padding-left: 8px; }
 
-.work-section h3, .about-section h3, .process-section h3 {
+.work-section h3, .about-section h3, .process-section h3, .contact-section h3 {
   text-align: center;
   font-size: 36px; }
+.work-section .content, .about-section .content, .process-section .content, .contact-section .content {
+  margin: 30px auto;
+  width: 600px; }
 
 .page {
   padding-top: 120px; }

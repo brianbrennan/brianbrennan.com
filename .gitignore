@@ -45,3 +45,6 @@ Temporary Items
 node_modules
 components/lib
 ftpsync.settings
+app/app.min.js
+components/styles.css
+components/styles.css

@@ -11,9 +11,14 @@ route.config(function($routeProvider, $locationProvider){
 		templateUrl: 'app/views/about.html'
 	})
 
+
 	.when('/skills',{
 		templateUrl: 'app/views/skills.html',
 		controller: 'skillsController',
 		controllersAs: 'skills'
+	})
+
+	.when('/contact', {
+		templateUrl: 'app/views/contact.html'
 	});
 });

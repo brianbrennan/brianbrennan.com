@@ -272,6 +272,7 @@ input[type="text"]{
 
 }
 
+
 //-------------------------Skills Page
 
 .skills{
@@ -289,6 +290,44 @@ input[type="text"]{
 		h4{
 			margin-bottom:-($sm);
 		}
+
+
+//------------------------Contact Page
+
+.contact, .contact-section{
+	input[type="text"],input[type="email"], textarea{
+		box-sizing:border-box;
+		padding:$mic $tny;
+		border:1px solid $grey;
+		color:$grey;
+
+		&:focus{
+			border-color:$black;
+		}
+	}
+
+	input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+		border-color:red;
+	}
+
+	input.ng-valid.ng-touched, textarea.ng-valid.ng-touched{
+		border-color:$green;
+	}
+
+	input[type="text"],input[type="email"]{
+		margin-bottom:$reg;
+		@include span(2 of 4);
+	}
+	input[type="email"]{
+		@include last();
+	}
+	textarea{
+		margin-bottom:$reg;
+		@include span(4);
+		resize:none;
+	}
+	button[type="submit"]{
+		@include span(2 at 2);
 	}
 }
 

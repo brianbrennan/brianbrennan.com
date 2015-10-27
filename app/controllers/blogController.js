@@ -5,4 +5,10 @@ angular.module('blogCtrl', [])
 		.success(function(res){
 			$scope.posts = res;
 		});
+
+		$scope.limit = 4;
+
+		$scope.showMore = function(){
+			$scope.limit = $scope.limit + 4;
+		}
 	});	

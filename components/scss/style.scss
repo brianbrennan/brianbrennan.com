@@ -466,6 +466,19 @@ button[type="submit"]{
 	.post{
 		margin-bottom:$reg;
 	}
+
+	.show-more{
+		display:block;
+		text-align:center;
+		color:$grey;
+		font-family:$body;
+		text-decoration:none;
+		@include transition(0.2s);
+
+		&:hover{
+			color:$green;
+		}
+	}
 }
 
 .post-page{

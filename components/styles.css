@@ -363,7 +363,15 @@ button[type="submit"] {
     margin: auto;
     text-align: center;
     clear: both;
-    padding-top: 30px; }
+    padding-top: 30px;
+    font-family: 'Lato', sans-serif;
+    color: #989898;
+    text-decoration: none;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    transition: 0.2s; }
+    .work-section .view-all:hover {
+      color: #61D2B4; }
 
 .process-section h4 {
   margin-top: 60px;

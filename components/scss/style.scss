@@ -327,6 +327,14 @@ button[type="submit"]{
 		text-align:center;
 		clear:both;
 		padding-top:$reg;
+		font-family:$body;
+		color:$grey;
+		text-decoration:none;
+		@include transition(0.2s);
+
+		&:hover{
+			color:$green;
+		}
 	}
 }
 

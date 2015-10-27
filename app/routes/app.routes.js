@@ -15,6 +15,18 @@ route.config(function($routeProvider, $locationProvider){
 		templateUrl: 'app/views/work.html'
 	})
 
+	.when('/blog', {
+		templateUrl: 'app/views/blog.html',
+		controller: 'blogController',
+		controllersAs: 'blog'
+	})
+
+	.when('/blog/:post', {
+		templateUrl: function(params){
+			return 'app/views/blog/' + params.post + '.html';
+		}
+	})
+
 
 	.when('/skills',{
 		templateUrl: 'app/views/skills.html',

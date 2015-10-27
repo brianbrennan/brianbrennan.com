@@ -2,7 +2,7 @@
     $response = array( 'success' => false );
     $formData = file_get_contents( 'php://input' );
     $data = json_decode( $formData );
-    if ( $data->submit && empty( $data->honeypot ) ) {
+    if ( $data->submit) {
         $name = $data->name;
         $email = $data->email;
         $message = $data->message;

@@ -37,3 +37,20 @@
 .skill.ng-leave-active{
 	opacity: 0;
 }
+
+//----------------------Home animations
+
+@keyframes color-arrow{
+	0%{
+		border-color:$grey;
+		top:80vh;
+	}
+	50%{
+		border-color:$green;
+		top:82vh;
+	}
+	100%{
+		border-color:$grey;
+		top:80vh;
+	}
+}

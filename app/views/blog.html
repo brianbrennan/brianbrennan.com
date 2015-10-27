@@ -1,0 +1,19 @@
+<div class="blog page">
+	<div class="wrapper">
+		<h4>Recent Posts</h4>
+
+		<aside>
+			<div class="filters">
+				
+			</div>
+		</aside>
+
+		<div class="posts">
+			<div class="post" ng-repeat="post in posts | orderBy: 'id':true">
+				<h3><a href="/#{{post.page}}">{{post.title}}</a></h3>
+				<span class="date">{{post.date}}</span>
+				<div class="divide"></div>
+			</div>
+		</div>
+	</div>
+</div>

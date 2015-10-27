@@ -1,0 +1,42 @@
+<div class="page post-page">
+	<div class="wrapper">
+		<h2>A Breakdown of API's</h2>
+		<span class="date">10.27.2015</span>
+
+		<div class="content">
+			<p>
+				If you’re a web developer who’s been around for a few years, you probably have noticed the influx of API’s coming out. It seems that every company has an API that they use internally, or publicly document for 3rd party developers, with the latter becoming more and more common. Every-day users of the internet might not understand how important of a step this open development policy is, but from a developer’s point of view, it’s made building tools for certain platforms incredibly simple and easy. Need to integrate a custom follow button on your site for Facebook? There’s an API for that. Need to give a client the ability to easily show all their youtube videos on their site? There’s an API for that. Nowadays, if you’re trying to solve a problem that involves other companies’ information, chances are that there are tools ready to be used, or someone has already built something for you to implement directly. Now, if you’re not a developer, or simply aren’t familiar with using API’s, then you might be curious what any of that meant. Let’s start from the basics.
+			</p>
+
+			<h4>What is an API?</h4>
+
+			<p>
+				API stands for Application Program Interface, and is a somewhat vague description of software that can be built to more easily integrate other software. What does that mean. Well let’s use an example, with some show and tell. Let’s say I want to show all of my recent tweets on a webpage. Before the time of publicly documented API’s, this would be pretty difficult. I’d have to build some sort of web scraper, to watch my Twitter feed for any updates. If an update happened, it would then have to save the information somehow, and then display it on the webpage. I’m sure there are other workarounds, but let’s just say it wouldn’t be fun. Now, Twitter does have a well documented API. This means I won’t have to have a workaround, and instead can get my information directly from Twitter, in a much faster, and more easily developed way.
+			</p>
+
+			<h4>How Do API’s Work?</h4>
+
+			<p>
+				API’s can work in a lot of different ways, but I’ll focus on the most common web-based API. Web-based API’s work around HTTP requests. The internet is all about connections already. Whenever you go to a website, your browser is making a GET request to the server that is hosting the files needed to properly display the webpage, and the server responds by sending the files. Web-based API’s work the same way. Specific addresses are assigned to distribute certain information based on HTTP request. Instead of HTML files, this is usually some form of data-transfer language, like JSON or XML. This gives the client making the request an easy to use format with all the information that they need. It also has a huge advantage to other types of server client interactions.
+			</p>
+
+			<h4>What is REST?</h4>
+
+			<p>
+				REST stands for Representational State Transfer. It is exactly what was described above. Sending and receiving data can get a bit dicey if the front end is talking directly to the database. Using a RESTful API as described above, representations of the data are being distributed between the client and server, rather than the actual information. If you receive JSON of all the tweets you’ve made in the last year, and you delete that JSON, you haven’t deleted your tweets. Likewise, even if you make a POST request to the Twitter API to create a tweet, you aren’t actually editing the database directly. You are making a call to the API, which in turn talks to the back end and does that for you. This allows a certain level of safety with data, while still giving developers the ability to manipulate data that should be manipulatable. 
+			</p>
+
+			<h4>Why are API’s So Cool?</h4>
+
+			<p>
+				So let’s say you understand how to get information from an API now, by making specific HTTP requests. Well, if you managed this than you are already seeing how cool an API can be, but what makes it so much better than standard static server client behavior. Well, with an API, the data being delivered has the logic of the back end abstracted from the call, so that just clean simple information is being distributed. This allows multiple pieces of front end software to use the same API at the same time. It’s future-proofing for possible upcoming applications. If Twitter had to recreate their own backend when they wanted to make a mobile application, that would be a serious time sink. Instead, they use their own API to communicate to the back end, which is separate from any application using the data from the API. This is where the cool factor of publicly documented API’s come into play. Developers can create third party applications using the API from other platforms! If Twitter can abstract their backend using their API, then this allows them to let others use their API for other applications. Twitter doesn’t care about keeping data from things like tweets or user profiles a secret. That data is public anyway. The API is just a way to easily allow other applications to manipulate and read that information. This example doesn’t just apply to Twitter. It applies to almost every big company that exists today. More and more companies are embracing open development practices, allow developers to use their API’s in applications ranging from large to small.
+			</p>
+
+			<h4>What Does This Mean for Developers?</h4>
+
+			<p>
+				It means that it is a lot easier to build things now than it was 10 years ago. There are so many platforms out there with lots of useful data. With data like this developers can make applications that can integrate and talk to one another, without having to worry too much about security. Making public data more easily accessible is a huge leap in development, and who knows how much easier it will become to create awesome applications.
+			</p>
+		</div>
+	</div>
+</div>

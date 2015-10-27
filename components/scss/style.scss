@@ -624,6 +624,23 @@ button[type="submit"]{
 	span{
 		font-family:$body;
 	}
+
+	.panel{
+		margin-top:$lg;
+		img{
+			max-width:100%;
+		}
+
+		.caption{
+			font-family:$accent;
+			color:$grey;
+
+		}
+	}
+
+	.full{
+		width:100%;
+	}
 }
 
 //-----------------------------------------Specific Work Pages
@@ -636,6 +653,12 @@ button[type="submit"]{
 		text-align:center;
 		display:block;
 		margin:auto;
+	}
+
+	.full{
+		margin:$reg 0;
+		background-image:url('img/abaretirement/bg-bubbles.jpg');
+		background-size:100%;
 	}
 }
 

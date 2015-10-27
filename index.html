@@ -5,25 +5,8 @@
 	<title>Web Developer &amp; Designer | Brian Brennan</title>
 	<link rel="stylesheet" href="components/styles.css">
 	<base href="/">
-	<style type="text/css">
-	[ng-cloak].loading {
-		display: block !important;
-	}
-	[ng-cloak] {display: none;}
-	/* some naive styles for a splash page */
-	.loading {
-		background: white;
-		color: white;
-		position:fixed;
-		height:100vh;
-		width:100vw;
-	}
-	</style>
 </head>
 <body ng-app="myApp" ng-controller="mainController as main">
-	<div class="loading" ng-show="loading">
-		test
-	</div>
 	<div class="all" ng-cloak>
 		<header>
 			<div class="wrapper">

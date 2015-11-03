@@ -17,10 +17,13 @@
 <section class="work-section" ng-controller="workController as work">
 	<div class="wrapper">
 		<h3>Recent Work</h3>
-		<div class="pieces" ng-repeat="piece in works | orderBy: 'id':true | limitTo: 4 ">
+		<div class="pieces">
 
-			<div class="piece">
-				<a href="/#{{piece.page}}"><img src="{{piece.thumbnail}}" alt=""></a>
+			<div class="piece" ng-repeat="piece in works | orderBy: 'id':true | limitTo: 4 ">
+				<a href="/#{{piece.page}}">
+					<div class="overlay"></div>
+					<img src="{{piece.thumbnail}}" alt="">
+				</a>
 			</div>
 		</div>
 

@@ -135,7 +135,7 @@ blockquote {
 pre {
   counter-reset: line-numbering;
   background: #efefef;
-  padding: 15px 15px 15px 0;
+  padding: 15px;
   display: block;
   color: #222;
   line-height: 140%;

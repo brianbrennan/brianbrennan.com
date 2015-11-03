@@ -15,20 +15,25 @@ S.ready(function(){
 	//----------------------Header
 
 
-	document.addEventListener('scroll', function(){
+	// document.addEventListener('scroll', function(){
 
-		console.log(window.location.pathname);
+	// 	console.log(window.location.pathname);
 
-		if(window.location.pathname === '/'){
+	// 	if(window.location.pathname === '/'){
 
-			var height = Number(s('.hero').css('height')[0].substr(0, s('.hero').css('height')[0].length - 2));
+	// 		var height = Number(s('.hero').css('height')[0].substr(0, s('.hero').css('height')[0].length - 2));
 
-			if(document.body.scrollTop > height || typeof height === 'undefined'){
-				s('header').removeClass('dark');
-			} else {
-				s('header').class('dark');
-			}
-		}
-	});
+	// 		if(document.body.scrollTop > height || typeof height === 'undefined'){
+	// 			s('header').removeClass('dark');
+	// 		} else {
+	// 			s('header').class('dark');
+	// 		}
+	// 	}
+	// });
+
+	//---------------------Pre tag styling
+
+	console.log(s("pre");)
+
 
 });

@@ -41,6 +41,33 @@ blockquote{
 	border-left:1px solid $green;
 }
 
+pre{
+  counter-reset:line-numbering;
+  background:$lighter-grey;
+  padding:$sm $sm $sm 0;
+  display:block;
+  color:$black;
+  line-height:140%;
+  font-family: $mono;
+  font-size:$smFontSize;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+
+    .line::before {
+      content: counter(line-numbering);
+      counter-increment: line-numbering;
+      padding-right: 1em;
+      /* space after numbers */
+      padding-left:8px;
+      width: 1.5em;
+      text-align: right;
+      opacity: 0.5;
+      color:$grey;
+  }
+}
+
 //--------------------------General Pieces
 
 .wrapper{

@@ -54,9 +54,9 @@
 			</p>
 
 			<pre>
-				function enigmate(s){
-					//fun stuff will go here
-				}
+function enigmate(s){
+	//fun stuff will go here
+}
 			</pre>
 
 			<p>
@@ -68,10 +68,10 @@
 			</p>
 
 			<pre>
-				function enigmate(s){
-					var message = ""; 
-					return message;
-				}
+function enigmate(s){
+	var message = ""; 
+	return message;
+}
 			</pre>
 
 			<p>
@@ -79,9 +79,9 @@
 			</p>
 
 			<pre>
-				function rotorize(c){
-					//rotor stuff happens here
-				}
+function rotorize(c){
+	//rotor stuff happens here
+}
 
 			</pre>
 
@@ -94,7 +94,7 @@
 			</p>
 
 			<pre>
-				var rotorSettings = ‘B’;
+var rotorSettings = ‘B’;
 			</pre>
 
 			<p>
@@ -102,10 +102,10 @@
 
 			</p>
 			<pre>
-				function rotorize(c){
-					var givenCharCode = c.charCodeAt(0) - 65;
-					var rotorCharCode = rotorSettings.charCodeAt(0) - 65;
-				}
+function rotorize(c){
+	var givenCharCode = c.charCodeAt(0) - 65;
+	var rotorCharCode = rotorSettings.charCodeAt(0) - 65;
+}
 			</pre>
 			<p>
 				Voila. We now have the numbers associated with our input character, and our rotor setting character. You might be asking yourself why we are subtracting 65 from our charCode. Take a look at the ASCII table that I’m sure you’ve pulled up in order to follow along diligently. 65 is  ‘A’ on the ASCII table. It’s the start of the alphabet. 65 to 90 is the range in which all the capital letters rest. I guess this is the time to say that this program will only be able to encrypt and decrypt capital letters. That was how the original enigma would do it, since each rotor only had 26 points. If it included lowercase, it would be bumped up to 52, but there wasn’t much point since Morse code was only really useful for letters themselves, and not their case. Don’t worry, we’ll be making this more complex later, but for now, capital letters only.
@@ -116,12 +116,12 @@
 			</p>
 
 			<pre>
-				function rotorize(c){
-					var givenCharCode = c.charCodeAt(0) - 65;
-					var rotorCharCode = rotorSettings.charCodeAt(0) - 65;
+function rotorize(c){
+	var givenCharCode = c.charCodeAt(0) - 65;
+	var rotorCharCode = rotorSettings.charCodeAt(0) - 65;
 
-					var num = (givenCharCode + rotorCharCode + (26 * rotorSettings.length)) % 26 + 65;
-				}
+	var num = (givenCharCode + rotorCharCode + (26 * rotorSettings.length)) % 26 + 65;
+}
 			</pre>
 
 			<p>
@@ -133,7 +133,7 @@
 			</p>
 
 			<pre>
-				return String.fromCharCode(num);
+return String.fromCharCode(num);
 			</pre>
 
 			<p>
@@ -141,21 +141,21 @@
 			</p>
 
 			<pre>
-				function enigmate(s){
-					var message = “”;
-	
-					for(var i = 0; i < s.length; i++){
-						var addChar = s[i];
+function enigmate(s){
+	var message = “”;
 
-						for(var j = 0; j < rotorSettings.length; j++){
-							addChar = rotorize(addChar);
-						}
+	for(var i = 0; i < s.length; i++){
+		var addChar = s[i];
 
-						message = message + addChar;
-					}
+		for(var j = 0; j < rotorSettings.length; j++){
+			addChar = rotorize(addChar);
+		}
 
-					return message;
-				}
+		message = message + addChar;
+	}
+
+	return message;
+}
 			</pre>
 
 			<p>
@@ -167,14 +167,268 @@
 			</p>
 
 			<pre>
-				console.log(enigmate(‘HELLO’));
+console.log(enigmate(‘HELLO’));
 
-				output >> IFMMP
+output >> IFMMP
 			</pre>
 
 			<p>
 				
 				Hurray! We’ve scrambled a message. We’re done right? Not by a long shot. If you take a look at the output, it has been shifted via our shift cipher code in our rotorize function, but it’s hardly difficult to crack. Each letter was shifted up the alphabet by 1, thus A is B, H is I, and so on. On top of that, we only have one rotor set via our rotorSettings variable. We’ll need to add a few things in, in order for us to get this working properly. Let’s start with fixing the rotorSettings.length problem. If you were to try and run this program with a rotorSettings of a larger value, it wouldn’t work. That’s because we need an index to iterate through globally. We can make that right now. At the top of the program
+
+			</p>
+
+			<pre>
+var rotorSettings = ‘B’;
+var atRotor = 0;
+			</pre>
+
+			<p>
+				This atRotor variable will allow the program to keep track of which rotor is being used in the rotorize function. We’ll need to add some iteration in that function though.
+			</p>
+
+			<pre>
+function rotorize(c){
+	var givenCharCode = c.charCodeAt(0) - 65;
+	var rotorCharCode = rotorSettings.charCodeAt(atRotor) - 65; //note the change from 0
+	atRotor++; // iterates through all of the rotorSettings
+
+	var num = (givenCharCode + rotorCharCode + (26 * rotorSettings.length)) % 26 + 65;
+
+	return String.fromCharCode(num);
+}
+
+			</pre>
+
+			<p>
+				We changed our ‘0’ in the rotorSettings.charCodeAt call to atRotor, so that we can go through each of our rotors. When rotorize is called, it will start at 0, and work its way up our settings, passing the character given through each of our shift ciphers on the way. It will iterate all the way up to the last character in rotorSettings, thanks to that inner loop in our enigmate function. We’ll also want to reset the atRotor variable once that loop is complete, since we want to start at 0 for each incoming character.
+			</p>
+
+			<pre>
+function enigmate(s){
+	var message = "";
+
+	for(var i = 0; i < s.length; i++){
+		var addChar = s[i];
+
+		for(var j = 0; j < rotorSettings.length; j++){
+			addChar = rotorize(addChar);
+		}
+
+		atRotor = 0; // added to reset the atRotor variable;
+
+		message = message + addChar;
+	}
+
+	return message;
+}
+			</pre>
+
+			<p>
+				Now let’s see what our output is for our program. To test our new code, let’s change our rotorSettings to ‘BRAZIL’.
+			</p>
+
+			<pre>
+console.log(enigmate(‘HELLO’);
+
+output  >>  ROVVY
+			</pre>
+
+			<p>
+				Awesome, our message is still getting scrambled up. And since we have a longer rotor setting, we should have a much more secure message right? Well, no. We still are only creating a shift cipher on one alphabet. This means that although each character is being passed through multiple rotors, they are being passed through the SAME rotor settings, and thus ending with an easy to break shift cipher still. They quick way to tell is that double letters are still doubled (the ‘LL’ in ‘HELLO’ just became ‘VV’).
+			</p>
+
+			<p>
+				This is where the next step in the Enigma’s design comes into play: stepping! If we simply make our rotor settings step each time a character is passed in, our shift cipher will become a polyalphabetic cipher, just like the original Enigma had. We’ll need to make a new function for this, and then add some code to our other functions. Let’s start with the new function:
+			</p>
+
+			<pre>
+function step(){
+	var newSettings = “”;
+
+	for(var i = 0; i < rotorSettings.length; i++){
+		newSettings = newSettings + String.fromCharCode(rotorSettings.charCodeAt(i) + 1);
+	}
+
+	rotorSettings = newSettings;
+}
+			</pre>
+
+			<p>
+				This will go through each of the characters in our rotor settings and step them up by just one. This isn’t exactly how the original Enigma would step its rotors, but it has the same idea. You could easily make this stepping function differ by adding i instead of 1, and thus have each rotor step by an increasing amount. We simply add these new characters to the newSettings variable and set the rotorSettings to the newSettings. But when should we call this new stepping function? This is where we are going to add to our previous code. We’re going to want to step once for each character in the string given to enigmate. We also probably want to preserve and reset our original rotor settings, since the whole point of Enigma is that it is reciprocal. So our code should look like this
+			</p>
+
+			<pre>
+function enigmate(s){
+	var message = "";
+	var saveSettings = rotorSettings; // saving the settings that will be reset
+
+	for(var i = 0; i < s.length; i++){
+		step(); //implementing our stepping functionality
+
+		var addChar = s[i];
+
+		for(var j = 0; j < rotorSettings.length; j++){
+			addChar = rotorize(addChar);
+		}
+
+		atRotor = 0;
+
+		message = message + addChar;
+	}
+
+	rotorSettings = saveSettings;//resetting the settings
+
+	return message;
+}
+
+			</pre>
+
+			<p>
+				This should make our encryption a lot more secure and complex. Let’s see what our output is now, using the same settings of ‘BRAZIL’:
+			</p>
+
+			<pre>
+console.log(enigmate(‘HELLO’));
+
+output >> XANTC
+
+			</pre>
+
+			<p>
+				Awesome, our polyalphabetic cipher is working great. We can make it even more secure later by changing the way that our stepping function iterates. Maybe we can make it step up by prime numbers, or squares. Anything is possible! Let’s leave our encryption there for now, and get working on the next step of the process: decryption! Having a scrambled message is great, but it’s worthless unless we can decrypt it when we want to. Since Enigma is reciprocal, the thought process behind decryption is pretty simple. We just have to do all the steps we just did in reverse. Let’s start making our decryption functions.
+
+			</p>
+
+			<p>
+				First, we’re going to want to create an encompassing function like we did with our encryption. Since deEnigmate doesn’t exactly roll off the tongue, let’s call this function decrypt. Since we are going to want to do exactly what we did in enigmate, but in reverse, we’re going to want to get our rotorSettings to a point that they should be at the end of our encryption. After that, we can start going through the steps in reverse. To do that, all we need to do is call our step function inside of a loop like we did in enigmate. Our decrypt function will look like this right now
+			</p>
+
+			<pre>
+function decrypt(s){
+	var message = “”;
+
+
+	for(var i = 0; i < s.length; i++){
+		step();
+	}
+
+	//our settings will be the same as at the end of encryption now.
+
+	return message;
+}
+			</pre>
+
+			<p>
+				From here, all we want to do is create a deRotorize function and a deStep function, for iterating backwards in from our encryption process. For brevity, here are the decryption functions. The concept works the exact same as the encryption functions, but doing each process in reverse. The important thing to note is also calling the functions in reverse order. This means deStepping after we deRotorize, since we step before we rotorize in our encryption. Here is the decryption code.
+			</p>
+
+			<pre>
+function decrypt(s){
+	var message = "";
+	var saveSettings = rotorSettings;
+	atRotor = rotorSettings.length - 1;
+
+	for(var i = 0; i < s.length; i++){//get to point that rotor settings should be
+		step();
+	}
+
+	for(var i = s.length - 1; i >= 0; i--){
+		var addChar = s[i];
+
+		for(var j = rotorSettings.length - 1; j >= 0; j--){
+			addChar = deRotorize(addChar);
+		}
+
+		atRotor = rotorSettings.length - 1;
+		deStep();
+
+		message = addChar + message;
+	}
+
+	rotorSettings = saveSettings;
+
+	return message;
+}
+
+function deRotorize(c){
+	var givenCharCode = c.charCodeAt(0) - 65;
+	var rotorCharCode = rotorSettings.charCodeAt(atRotor) - 65;
+
+	atRotor--;
+
+	var num = (givenCharCode - rotorCharCode + (26 * rotorSettings.length)) % 26 + 65;
+
+	return String.fromCharCode(num);
+
+}
+
+function deStep(){
+	var newSettings = "";
+	for(var i = 0; i < rotorSettings.length; i++){
+		newSettings = newSettings + String.fromCharCode(rotorSettings.charCodeAt(i) - 1);
+	}
+
+	rotorSettings = newSettings;
+}
+			</pre>
+
+			<p>
+				Let’s go ahead and try to encrypt and decrypt a new message. I’ll set my rotorSettings to ‘MAGIC’, and pass in ‘ABRACADABRA’.
+			</p>
+
+			<pre>
+console.log(enigmate('ABRACADABRA'));
+
+output >> HNIWDGOQWRF
+
+console.log(decrypt('HNIWDGOQWRF'));
+
+output >> ABRACADABRA
+			</pre>
+
+			<p>
+				It worked! We now have an Enigma-like encryption program. It’s still very rudimentary though. There a lot of other features that we could add in. Off the top of my head, I think that it would be good to give the user the ability to keep spaces into their message if they wanted to. We wouldn’t be able to just input space characters into our encryption as our program is right now, since its ascii value would clash with what we have right now. So, we should make a property called spaces, and let it be a boolean. If the spaces property is true, then we can return any spaces as they are. Pretty simple right? Let’s add that property to the top of our program.
+			</p>
+
+			<pre>
+var spaces = true;
+			</pre>
+
+			<p>
+				Now that we have this set, we should change our rotorize and deRotorize functions so that they know to not change spaces. We can just add these few lines of code to both functions
+			</p>
+
+			<pre>
+if(givenCharCode == -33 && this.spaces == true)
+	return ' ';
+			</pre>
+
+			<p>
+				We specify -33 as the givenCharCode here because it is 65 - the charCode of the space character, 32. Now if we were to run our program again, just like before, but with spaces, we will get the following
+			</p>
+
+			<pre>
+console.log(enigmate('ABRA CA DABRA'));
+
+output >> HNIW DG OQWRF
+
+console.log(decrypt('HNIW DG OQWRF'));
+
+output >> ABRA CA DABRA
+
+			</pre>
+
+			<p>
+				There are lots of other changes we can make to our code. One thing that could be of huge use is updating the alphabets that the string could be in, such as having alphanumeric or full ASCII alphabets available for use. All we would have to change is the logic in the rotorize and deRotorize functions. We could also set up the plug settings that were mentioned earlier to have been a part of the naval Enigma, but this would be somewhat pointless as the same level of security could be achieved by simply adding more rotors. With this program, you’re not limited to the 8 that the real version was limited to.
+			</p>
+
+			<p>
+				I touched earlier on the fact that Alan Turing and his colleagues at Bletchley were able to break a code like this back in 1945. How exactly did they do that? Well, they invented a type of hacking to do it. Brute force hacking is a data cracking technique where every single possible setting is explored until the program finds a successful setting. Brute force hacking can get through any kind of encryption that anyone could ever create, given that the hacker had an infinite amount of time, and infinite attempts at cracking said code. Think monkeys and typewriters. Alan Turing helped come up with another engineering marvel, the ‘Bombe’. named after the ticking sound it would make when trying to crack a code. The goal of this machine was to brute force the enigma settings until the correct one was found. One bombe wasn’t enough for this task, however, since the settings needed to be cracked each and every day before the german’s would change their settings. So multiple bombes were created, including some in America by the Navy. I bring this up because it is a testament to the fact that no code is unbreakable, but can prove rather difficult.
+			</p>
+
+			<p>
+				As such, this program could prove to be as breakable as the original Enigma was. Computers are much faster these days, and with unlimited resources, even in a full ASCII alphabet, this encryption could prove to be crackable. Hopefully for now though, you can enjoy your newly learned encryption technique!
 
 			</p>
 

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Lato:400,700|Droid+Serif:400italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Lato:400,700|Droid+Serif:400italic|PT+Mono);
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -131,6 +131,30 @@ blockquote {
   padding-left: 30px;
   color: #61D2B4;
   border-left: 1px solid #61D2B4; }
+
+pre {
+  counter-reset: line-numbering;
+  background: #efefef;
+  padding: 15px 15px 15px 0;
+  display: block;
+  color: #222;
+  line-height: 140%;
+  font-family: 'PT Mono';
+  font-size: 14px;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word; }
+  pre .line::before {
+    content: counter(line-numbering);
+    counter-increment: line-numbering;
+    padding-right: 1em;
+    /* space after numbers */
+    padding-left: 8px;
+    width: 1.5em;
+    text-align: right;
+    opacity: 0.5;
+    color: #989898; }
 
 .wrapper {
   position: relative; }

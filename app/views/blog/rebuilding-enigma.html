@@ -1,0 +1,184 @@
+<div class="page post-page">
+	<div class="wrapper">
+		<h2>Rebuilding Enigma</h2>
+		<span class="date">11.3.2015</span>
+
+		<div class="content">
+			<p>
+				For centuries, cryptic messages have been used by people to send information. The beauty of having messages that anyone can see but few can understand has been effectively used by governments, businesses, and military across the world. Possibly the most notorious machine designed to create such messages was the Enigma machine. Originally created for commercial use, this marvel of 20th century engineering made its debut into infamy during World War II, where it was used widely by the Third Reich, across all aspects of the Nazi government and military. After several alterations were made to the already extremely complex machine, the germans believed enigma was the pinnacle of encryption, unable to be broken by even the best cryptographers. They were wrong.
+			</p>
+
+			<p>
+				Alan Turing, father of Computer Science, Mathematician, and pretty good solver of riddles, along with a group of dedicated British codebreakers, technicians, and countless others, helped create the tools necessary to decrypt the messages that were being sent over the Atlantic by the germans.  Getting the messages wasn’t an issue for the code breakers. Sent via radio signals in Morse code, the messages were encoded using an enigma machine on the sender’s end, and decrypted by an enigma on the receiver’s end. Within the gobbledygook that was the Third Reich’s message relays, laid the position of every U-Boat, eminent attack, ground positions, and politicians whereabouts. The genius of the Enigma laid in the fact that these messages were so highly encrypted, that it didn’t matter that anyone could listen in on their transmissions. It was only possible to transform the seemingly random sequence of letters into a meaningful message if one had an Enigma machine themselves, and the correct settings for said machine. Well, either that, or something that could go through quintillions of permutations of settings every day. Alan Turing created just that.
+
+			</p>
+
+			<h4>How Does Engima Work?</h4>
+
+			<p>
+				Before we get into how to Enigma machine was broken, let’s take a look at how it actually works. A look from the outside at the machine is just a simple box with keys on it. When the user types a letter, a different letter comes out, via a lighted panel of letters on one of its faces. One letter in, one letter out. Simple enough right? Well it’s the engineering that goes into determining what letter comes out that shows how complex Enigma really is. There are 3 main parts of Enigma that determine what letter is output to the user. The first is the I/O parts, or In/ Out. On most models, this was simply a keyboard (usually a QWERTZ layout one, rather than our american standardized QWERTY ones), and a light panel. Some models had printing outputs that allowed the decryption to take place, and then output the message to a piece of paper, thus removing the need for a person to record the message.
+			</p>
+
+			<p>
+				The next part, or rather collection of parts, is the rotor. In the commercial version of the Enigma, 3 rotors were placed inside the machine, with 26 points on each, one for each letter of the alphabet. These rotors would be put to a setting based on what letter was facing upwards. So, for example, a rotor setting could be ‘RAR’ or ‘BDF’. Once a letter was input into the machine, the letter would pass through each of these rotors, and output a different letter based on the position of each. If you have a keen eye for problem solving, you might already notice a flaw with this. If you passed in each letter into the same settings, then you would just have a simple substitution cipher. It wouldn’t be too hard for someone to noticed the characters that appear the most, and which characters are doubled up. Well the germans came up with a solution to that as well.
+			</p>
+
+			<p>
+				After each keystroke, the rotors would all shift. The way in which they shifted varied from model to model, but the most common way they would move was for the closest rotor to move 1 step of its 26, with the other rotors moving less frequently. All of the sudden that simple substitution cypher has gotten a lot more complex. This stepping function creates a polyalphabetic cipher, where  each letter put into the machine essentially has its own alphabet to go along with it, up to 263 different variations. And this is only for the commercial version of the machine. The Naval version of the machine, which was the most complex one that the germans had, made use of 8 rotors, instead of 3 (this number of rotors varied throughout the war, but the most complex version had 8. It also didn’t have all 8 of these rotors stepping, and instead relied on a manual setting of the final rotor, but still extremely complex). Yes, the german military made sure to make their key communication device as secure as possible with modifications, including the final part to the Enigma.
+			</p>
+
+			<p>
+				One of the faces of the military edition of the machine had a series of plugs and wires coming out of it. There were 26 holes, one for each letter. A wire could be connected from any one hole, to any other hole. The wires could not connect to their own letter, and you could not have more than one connection per letter. What these connections would do, was swap the already encrypted characters with the connected character. However, the number of connections was only limited by how many letters there were, and the minimum was 0. Military active Enigma machines would often have 10 different connection settings. Thats a lot of additional settings, and adds to the complexity of the encryption of messages by several magnitudes.
+			</p>
+
+			<p>
+				A very important note about these messages is that when the settings of two machines are set exactly the same, then encryption and decryption are reciprocal. What does that mean exactly? Well, it means that if you type in a message, it will become encrypted. But when you type in the encrypted message into the machine again, it will become decrypted. This is an important thing to remember when we’re building our program. It was also very important for the code breakers and Bletchley, because if there were different settings required for decryption than encryption, the magnitude of possible settings would go up again. As you can see, this seemingly simple box with keys and lights is a lot more than meets the eye.
+			</p>
+
+			<h4>Beginning to Rebuild the Machine</h4>
+
+			<p>
+				I want to rebuild this as a little challenge for myself. I got the idea while reading Alan Turing: The Enigma, by Andrew Hodges. If you are interested in mathematics, computer science, or just very cool problem solving, I’d recommend you giving it a read. This extensive biography goes into great detail about Turing’s work with the Enigma machine. It also describes Alan Turing’s original thoughts and abstract prototypes of a digital computer. The connection between Enigma and programming was not lost on Turing, and that is what sparked my interest. 
+			</p>
+
+			<p>
+				I should note, I have no prior experience with encryption. The only “real world” experience that I can consider to be related to encryption is that I learned Morse code at the spot where it was invented as a kid, and even that I’ve largely forgotten. On top of that, I don’t think I’ll implement a Morse code extension to this rebuild project, since it is not nearly as useful as it was in World War II (we have computer screens and the internet after all). With my lack of expertise stated, let’s get started!
+			</p>
+
+			<p>
+				The first thing that we have to do in order to get prepared for making this encryption program is choose a language that we want to work with. I decided on JavaScript for a few reasons. Firstly, it is what I am most proficient at in terms of scripting languages. Second, I’ll be making and testing a lot of changes in very short bursts, and using Node will make it much easier to check my work via the command line, and an awesome tool called Nodemon. Third, I might actually use this on some websites in the future if it works, and having it written in JavaScript will allow me to be extremely flexible with it. I can see it being used as a method of encrypting email addresses and passwords on a database, so converting this program into a node package for future use in a MEAN stack application would be relatively simple.
+			</p>
+
+			<p>
+				Next up, we need to sketch what this program will be doing, based on the schematic of the Enigma. The key here is to be as abstract in the logic as possible, since we won’t have to be dealing with any physical limitations. Since the Enigma machine is such an easy to use machine, and just incredibly hard to break, I imagine we’ll want to have an encompassing function that can be called so that we don’t have to fiddle around with too much code when implementing our program.
+			</p>
+
+			<pre>
+				function enigmate(s){
+					//fun stuff will go here
+				}
+			</pre>
+
+			<p>
+				Later on, I’ll be converting this function into a fully fledged class, but since we are just trying to get this thing to work first, a simple function should do fine. I also named this function enigmate, because it’s the best name I could come up with for the act of making something impossible to solve, and even though it’s a made up word, it sounds cool. Note the ‘s’ parameter. This is where our message will be passed in as a string. Later on, when we are wrapping up our code, we’ll be sure to add in proper error handling to make sure that the message is formatted correctly. For now, it’s fine.
+			</p>
+
+			<p>
+				We’re going to deal with encrypting the message first, as how we encrypt it will directly determine how we decrypt it. So we have our string getting passed in. We want something to happen to that string (encryption) and then return the encrypted message. That’s easy so far! Let’s add that to our function.
+			</p>
+
+			<pre>
+				function enigmate(s){
+					var message = ""; 
+					return message;
+				}
+			</pre>
+
+			<p>
+				This isn’t doing too much though (obviously). We need to start thinking about how the Enigma works, and then convert that process into code. There are a variety of points that you can start from, but I decided to get the ‘rotors’ working first. You could make the rotor its own class, but I felt that it was enough to have the functionality set in, well, a function, since it will make adding the global variable of the rotor settings easier in the future. So here’s the bare bones of what I came up with.
+			</p>
+
+			<pre>
+				function rotorize(c){
+					//rotor stuff happens here
+				}
+
+			</pre>
+
+			<p>
+				An important thing to remember about the functionality of each rotor is that they only take in one character at a time. We’ll have to call the rotorize function several times in order to fully encrypt our message. Also, I thought rotorize sounded cool too.
+			</p>
+
+			<p>
+				Now it’s time to get our hands dirty with really figuring out how the rotor takes in one character, and spits out another. The answer is pretty simple actually.Each rotor acts as its own shift cipher. that implements modular math to determine what letters are associated with what position. Okay that sounded simpler in my head. Basically each letter in the original alphabet is pointed at one in the “rotor alphabet”. If the setting of the rotor is at ‘A’, then the alphabets will be the same. But for any other setting, the alphabet will be shifted. How much it is shifted will depend on what setting the rotor has. Hence, shift cipher. We’ll need to add a global variable for the rotorSettings now, and it will be very important later, since it is the key to making sure that our messages can be decrypted properly.
+			</p>
+
+			<pre>
+				var rotorSettings = ‘B’;
+			</pre>
+
+			<p>
+				We could have a variable to determine the amount of rotors we have, but why bother since that is already baked into this string, with rotorSettings.length (yet another reason I think this rotor can be a function and not a class). Since I’ll be testing to make sure my logic is right, I made only one rotor setting, and set it to ‘B’. Since we are doing a simple shift cipher with this rotor, than it should work out that any letter put into the rotor will come out shifted 1 letter up the alphabet. But how do we determine how much we want to shift? Obviously when the setting is ‘B’, we’ll want to shift the letter by only one, but what about other letters? Simple, we just do some letter math. Now is the time for you to become very well acquainted with the ASCII table. Every letter in a computer program has a number associated with it. We are going to be using these numbers to determine how much our letter should shift by. Back to our rotorize function:
+
+			</p>
+			<pre>
+				function rotorize(c){
+					var givenCharCode = c.charCodeAt(0) - 65;
+					var rotorCharCode = rotorSettings.charCodeAt(0) - 65;
+				}
+			</pre>
+			<p>
+				Voila. We now have the numbers associated with our input character, and our rotor setting character. You might be asking yourself why we are subtracting 65 from our charCode. Take a look at the ASCII table that I’m sure you’ve pulled up in order to follow along diligently. 65 is  ‘A’ on the ASCII table. It’s the start of the alphabet. 65 to 90 is the range in which all the capital letters rest. I guess this is the time to say that this program will only be able to encrypt and decrypt capital letters. That was how the original enigma would do it, since each rotor only had 26 points. If it included lowercase, it would be bumped up to 52, but there wasn’t much point since Morse code was only really useful for letters themselves, and not their case. Don’t worry, we’ll be making this more complex later, but for now, capital letters only.
+			</p>
+
+			<p>
+				Now it’s time to implement that modular math mentioned earlier, in order to properly create a shift cipher. The modulo (%) should be exactly what we need to do some modular mathematics. Let’s create a new variable right underneath our other two character codes that will store the modular difference between the two numbers.
+			</p>
+
+			<pre>
+				function rotorize(c){
+					var givenCharCode = c.charCodeAt(0) - 65;
+					var rotorCharCode = rotorSettings.charCodeAt(0) - 65;
+
+					var num = (givenCharCode + rotorCharCode + (26 * rotorSettings.length)) % 26 + 65;
+				}
+			</pre>
+
+			<p>
+				Now that looks a big complex. Let’s see what’s going on though. We’re adding the two character codes, which right now should be somewhere between 0 and 25 each, since we subtracted the 65 from their ASCII values. We are then adding the product of 26 and our rotorSettings’ length. After that, we are finding the remainder of this sum after dividing by 26, and lastly, adding on that 65 that we had taken out previously in order to correctly convert it back to a proper ASCII code. The one weird thing going on here is that 26 * rotorSettings.length expression. I added that in because I was finding with some values, especially with longer rotor settings, the modular math was not acting quite right. This expression solves that by making the character codes multiply by the rotorSettings, which ensures that the sum is big enough to work properly, yet won’t affect our modular math. If it works, it works.
+			</p>
+
+			<p>
+				All right we’re almost done with our rotorize function. We’ll just need to convert our character code back into a character, and send it back to our enigmate function. We can do that like so:
+			</p>
+
+			<pre>
+				return String.fromCharCode(num);
+			</pre>
+
+			<p>
+				This will return the ASCII character that is associated with the given value. With that getting returned, we can go back to our enigmate function and make sure that we are properly rotorizing our input. We’ll want to send each character through each of the rotors that we’ve specified in the rotor settings. That means two loops in our enigmate function. Easy:
+			</p>
+
+			<pre>
+				function enigmate(s){
+					var message = “”;
+	
+					for(var i = 0; i < s.length; i++){
+						var addChar = s[i];
+
+						for(var j = 0; j < rotorSettings.length; j++){
+							addChar = rotorize(addChar);
+						}
+
+						message = message + addChar;
+					}
+
+					return message;
+				}
+			</pre>
+
+			<p>
+				Let’s take a look at what’s going on in these loops. We’re going to be iterating through every character in our string input in that outer loop, and making a new variable called addChar that is equal to the character at the i position in the string. Then, we are calling rotorize once for each rotorSettings character we have specified (this is why I said it was pointless to create a number of rotors variable earlier).
+			</p>
+
+			<p>
+				Now our encryption should be working right? Let’s test it out and see. I’m going to set my rotorSettings to just ‘B’ for now, and run a console.log on my enigmate function, passing in an all caps string.
+			</p>
+
+			<pre>
+				console.log(enigmate(‘HELLO’));
+
+				output >> IFMMP
+			</pre>
+
+			<p>
+				
+				Hurray! We’ve scrambled a message. We’re done right? Not by a long shot. If you take a look at the output, it has been shifted via our shift cipher code in our rotorize function, but it’s hardly difficult to crack. Each letter was shifted up the alphabet by 1, thus A is B, H is I, and so on. On top of that, we only have one rotor set via our rotorSettings variable. We’ll need to add a few things in, in order for us to get this working properly. Let’s start with fixing the rotorSettings.length problem. If you were to try and run this program with a rotorSettings of a larger value, it wouldn’t work. That’s because we need an index to iterate through globally. We can make that right now. At the top of the program
+
+			</p>
+
+		</div>
+
+	</div>
+</div>

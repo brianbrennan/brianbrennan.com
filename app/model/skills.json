@@ -26,5 +26,13 @@
 	{
 		"skill": "ASP.NET",
 		"description": "Though I haven’t developed using .NET before, I have been involved with large sites that have used the .NET framework as their backend."
+	},
+	{
+		"skill": "REST",
+		"description": "RESTful API’s are some of the most useful tools on the internet right now, and I wouldn’t be worth my weight if I wasn’t comfortable with them. I’ve both used a variety of RESTful API’s in sites, including popular social media API’s, as well as built some of my own for projects."
+	},
+	{
+		"skill":"API",
+		"description": "API’s have made the web a much easier place to build things. I’m comfortable with many API’s, and due to their simple and easy to understand nature, I’m always open to learning about new platform’s interfaces. I’ve also built some of my own API’s."
 	}
 ]

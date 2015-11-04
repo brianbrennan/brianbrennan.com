@@ -18,11 +18,27 @@
 		.loading h1{
 			margin-top:30%;
 		}
+
+		.view-loading{
+			position:absolute;
+			height:100%;
+			width:100%;
+			background:white;
+			z-index:30;
+			text-align:center;
+		}
+
+		.view-loading h1{
+			margin-top:30%;
+		}
 	</style>
 </head>
 <body ng-app="myApp" ng-controller="mainController as main">
 	<div class="loading" ng-if="loading">
 		<h1>Loading</h1>
+	</div>
+	<div class="view-loading" ng-if="viewLoading">
+		<h1>Loading View</h1>
 	</div>
 	<div class="all" ng-cloak>
 		<header>

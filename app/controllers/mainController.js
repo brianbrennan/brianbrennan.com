@@ -6,9 +6,8 @@ angular.module('mainCtrl', [])
 		// 	$scope.loading = false;
 		// },1000);
 
-		$rootScope.$on('$routeChangeStart', function(event, next, current){
-			$rootScope.loading = true;
-		});
+
+		$rootScope.loading = true;
 
 		$scope.$on('$routeChangeStart', function(event, next, current) {
 

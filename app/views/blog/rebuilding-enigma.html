@@ -82,12 +82,13 @@ function enigmate(s){
 function rotorize(c){
 	//rotor stuff happens here
 }
-
 			</pre>
 
 			<p>
 				An important thing to remember about the functionality of each rotor is that they only take in one character at a time. We’ll have to call the rotorize function several times in order to fully encrypt our message. Also, I thought rotorize sounded cool too.
 			</p>
+
+			<h4>Building out the Rotors</h4>
 
 			<p>
 				Now it’s time to get our hands dirty with really figuring out how the rotor takes in one character, and spits out another. The answer is pretty simple actually.Each rotor acts as its own shift cipher. that implements modular math to determine what letters are associated with what position. Okay that sounded simpler in my head. Basically each letter in the original alphabet is pointed at one in the “rotor alphabet”. If the setting of the rotor is at ‘A’, then the alphabets will be the same. But for any other setting, the alphabet will be shifted. How much it is shifted will depend on what setting the rotor has. Hence, shift cipher. We’ll need to add a global variable for the rotorSettings now, and it will be very important later, since it is the key to making sure that our messages can be decrypted properly.
@@ -110,6 +111,8 @@ function rotorize(c){
 			<p>
 				Voila. We now have the numbers associated with our input character, and our rotor setting character. You might be asking yourself why we are subtracting 65 from our charCode. Take a look at the ASCII table that I’m sure you’ve pulled up in order to follow along diligently. 65 is  ‘A’ on the ASCII table. It’s the start of the alphabet. 65 to 90 is the range in which all the capital letters rest. I guess this is the time to say that this program will only be able to encrypt and decrypt capital letters. That was how the original enigma would do it, since each rotor only had 26 points. If it included lowercase, it would be bumped up to 52, but there wasn’t much point since Morse code was only really useful for letters themselves, and not their case. Don’t worry, we’ll be making this more complex later, but for now, capital letters only.
 			</p>
+
+			<h4>Implementing Modular Math</h4>
 
 			<p>
 				Now it’s time to implement that modular math mentioned earlier, in order to properly create a shift cipher. The modulo (%) should be exactly what we need to do some modular mathematics. Let’s create a new variable right underneath our other two character codes that will store the modular difference between the two numbers.
@@ -162,6 +165,8 @@ function enigmate(s){
 				Let’s take a look at what’s going on in these loops. We’re going to be iterating through every character in our string input in that outer loop, and making a new variable called addChar that is equal to the character at the i position in the string. Then, we are calling rotorize once for each rotorSettings character we have specified (this is why I said it was pointless to create a number of rotors variable earlier).
 			</p>
 
+			<h4>Testing Our First Encryption</h4>
+
 			<p>
 				Now our encryption should be working right? Let’s test it out and see. I’m going to set my rotorSettings to just ‘B’ for now, and run a console.log on my enigmate function, passing in an all caps string.
 			</p>
@@ -197,7 +202,6 @@ function rotorize(c){
 
 	return String.fromCharCode(num);
 }
-
 			</pre>
 
 			<p>
@@ -237,6 +241,8 @@ output  >>  ROVVY
 			<p>
 				Awesome, our message is still getting scrambled up. And since we have a longer rotor setting, we should have a much more secure message right? Well, no. We still are only creating a shift cipher on one alphabet. This means that although each character is being passed through multiple rotors, they are being passed through the SAME rotor settings, and thus ending with an easy to break shift cipher still. They quick way to tell is that double letters are still doubled (the ‘LL’ in ‘HELLO’ just became ‘VV’).
 			</p>
+
+			<h4>Stepping Our Rotors</h4>
 
 			<p>
 				This is where the next step in the Enigma’s design comes into play: stepping! If we simply make our rotor settings step each time a character is passed in, our shift cipher will become a polyalphabetic cipher, just like the original Enigma had. We’ll need to make a new function for this, and then add some code to our other functions. Let’s start with the new function:
@@ -281,7 +287,6 @@ function enigmate(s){
 
 	return message;
 }
-
 			</pre>
 
 			<p>
@@ -292,13 +297,14 @@ function enigmate(s){
 console.log(enigmate(‘HELLO’));
 
 output >> XANTC
-
 			</pre>
 
 			<p>
 				Awesome, our polyalphabetic cipher is working great. We can make it even more secure later by changing the way that our stepping function iterates. Maybe we can make it step up by prime numbers, or squares. Anything is possible! Let’s leave our encryption there for now, and get working on the next step of the process: decryption! Having a scrambled message is great, but it’s worthless unless we can decrypt it when we want to. Since Enigma is reciprocal, the thought process behind decryption is pretty simple. We just have to do all the steps we just did in reverse. Let’s start making our decryption functions.
 
 			</p>
+
+			<h4>Adding a Decryption Feature</h4>
 
 			<p>
 				First, we’re going to want to create an encompassing function like we did with our encryption. Since deEnigmate doesn’t exactly roll off the tongue, let’s call this function decrypt. Since we are going to want to do exactly what we did in enigmate, but in reverse, we’re going to want to get our rotorSettings to a point that they should be at the end of our encryption. After that, we can start going through the steps in reverse. To do that, all we need to do is call our step function inside of a loop like we did in enigmate. Our decrypt function will look like this right now
@@ -416,12 +422,15 @@ output >> HNIW DG OQWRF
 console.log(decrypt('HNIW DG OQWRF'));
 
 output >> ABRA CA DABRA
-
 			</pre>
+
+
 
 			<p>
 				There are lots of other changes we can make to our code. One thing that could be of huge use is updating the alphabets that the string could be in, such as having alphanumeric or full ASCII alphabets available for use. All we would have to change is the logic in the rotorize and deRotorize functions. We could also set up the plug settings that were mentioned earlier to have been a part of the naval Enigma, but this would be somewhat pointless as the same level of security could be achieved by simply adding more rotors. With this program, you’re not limited to the 8 that the real version was limited to.
 			</p>
+
+			<h4>Conclusion, and possible next steps</h4>
 
 			<p>
 				I touched earlier on the fact that Alan Turing and his colleagues at Bletchley were able to break a code like this back in 1945. How exactly did they do that? Well, they invented a type of hacking to do it. Brute force hacking is a data cracking technique where every single possible setting is explored until the program finds a successful setting. Brute force hacking can get through any kind of encryption that anyone could ever create, given that the hacker had an infinite amount of time, and infinite attempts at cracking said code. Think monkeys and typewriters. Alan Turing helped come up with another engineering marvel, the ‘Bombe’. named after the ticking sound it would make when trying to crack a code. The goal of this machine was to brute force the enigma settings until the correct one was found. One bombe wasn’t enough for this task, however, since the settings needed to be cracked each and every day before the german’s would change their settings. So multiple bombes were created, including some in America by the Navy. I bring this up because it is a testament to the fact that no code is unbreakable, but can prove rather difficult.

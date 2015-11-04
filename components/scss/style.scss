@@ -44,7 +44,7 @@ blockquote{
 pre{
   counter-reset:line-numbering;
   background:$lighter-grey;
-  padding:$sm;
+  padding:$sm $sm 0 $sm;
   display:block;
   color:$black;
   line-height:140%;
@@ -81,7 +81,7 @@ pre{
 header{
 	font-family:$body;
 	position:fixed;
-	z-index:100;
+	z-index:50;
 	width:100%;
 	padding-bottom:$med;
 	@include linear-gradient(white 50%, transparent, $fallback: transparent);
@@ -560,6 +560,11 @@ button[type="submit"]{
 		text-align:center;
 		display:block;
 		font-family:$body;
+	}
+
+	h4{
+		margin-top:$med;
+		margin-bottom:-($sm);
 	}
 }
 

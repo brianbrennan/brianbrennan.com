@@ -27,6 +27,10 @@
 				After each keystroke, the rotors would all shift. The way in which they shifted varied from model to model, but the most common way they would move was for the closest rotor to move 1 step of its 26, with the other rotors moving less frequently. All of the sudden that simple substitution cypher has gotten a lot more complex. This stepping function creates a polyalphabetic cipher, where  each letter put into the machine essentially has its own alphabet to go along with it, up to 263 different variations. And this is only for the commercial version of the machine. The Naval version of the machine, which was the most complex one that the germans had, made use of 8 rotors, instead of 3 (this number of rotors varied throughout the war, but the most complex version had 8. It also didn’t have all 8 of these rotors stepping, and instead relied on a manual setting of the final rotor, but still extremely complex). Yes, the german military made sure to make their key communication device as secure as possible with modifications, including the final part to the Enigma.
 			</p>
 
+			<blockquote>
+				One letter in, one letter out. Simple enough right? Well it’s the engineering that goes into determining what letter comes out that shows how complex Enigma really is. 
+			</blockquote>
+
 			<p>
 				One of the faces of the military edition of the machine had a series of plugs and wires coming out of it. There were 26 holes, one for each letter. A wire could be connected from any one hole, to any other hole. The wires could not connect to their own letter, and you could not have more than one connection per letter. What these connections would do, was swap the already encrypted characters with the connected character. However, the number of connections was only limited by how many letters there were, and the minimum was 0. Military active Enigma machines would often have 10 different connection settings. Thats a lot of additional settings, and adds to the complexity of the encryption of messages by several magnitudes.
 			</p>
@@ -44,6 +48,10 @@
 			<p>
 				I should note, I have no prior experience with encryption. The only “real world” experience that I can consider to be related to encryption is that I learned Morse code at the spot where it was invented as a kid, and even that I’ve largely forgotten. On top of that, I don’t think I’ll implement a Morse code extension to this rebuild project, since it is not nearly as useful as it was in World War II (we have computer screens and the internet after all). With my lack of expertise stated, let’s get started!
 			</p>
+
+			<blockquote>
+				A very important note about these messages is that when the settings of two machines are set exactly the same, then encryption and decryption are reciprocal. What does that mean exactly? Well, it means that if you type in a message, it will become encrypted. But when you type in the encrypted message into the machine again, it will become decrypted. 
+			</blockquote>
 
 			<p>
 				The first thing that we have to do in order to get prepared for making this encryption program is choose a language that we want to work with. I decided on JavaScript for a few reasons. Firstly, it is what I am most proficient at in terms of scripting languages. Second, I’ll be making and testing a lot of changes in very short bursts, and using Node will make it much easier to check my work via the command line, and an awesome tool called Nodemon. Third, I might actually use this on some websites in the future if it works, and having it written in JavaScript will allow me to be extremely flexible with it. I can see it being used as a method of encrypting email addresses and passwords on a database, so converting this program into a node package for future use in a MEAN stack application would be relatively simple.

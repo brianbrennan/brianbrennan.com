@@ -528,10 +528,13 @@ button[type="submit"] {
     transition: 0.2s; }
     .blog h3 a:hover {
       color: #61D2B4; }
-.blog .date {
+.blog .date, .blog .snippet {
   display: block;
   font-family: 'Lato', sans-serif;
   margin-top: 30px; }
+.blog .snippet {
+  width: 400px;
+  line-height: 1.5; }
 .blog .post {
   margin-bottom: 30px; }
 .blog .show-more {

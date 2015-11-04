@@ -12,6 +12,8 @@ angular.module('mainCtrl', [])
 
 		$scope.$on('$routeChangeStart', function(event, next, current) {
 
+			$scope.viewLoading = true;
+
 			if(next != 'undefined'){
 				if(next.$$route.originalPath == '/'){
 					s('header').class('dark');
@@ -31,6 +33,14 @@ angular.module('mainCtrl', [])
 				}
 			}
 
+		});
+
+		$scope.$on('$routeChangeSuccess', function(event, next, current){
+			setTimeout(function(){
+				window.scroll(0,0);
+			},300);
+	
+			$scope.viewLoading = false;
 		});
 
 		$rootScope.$on('$routeChangeSuccess', function(event, next, current){

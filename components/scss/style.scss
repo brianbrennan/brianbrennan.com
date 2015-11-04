@@ -531,10 +531,15 @@ button[type="submit"]{
 		}
 	}
 
-	.date{
+	.date, .snippet{
 		display:block;
 		font-family:$body;
 		margin-top:$reg;
+	}
+
+	.snippet{
+		width:400px;
+		line-height:1.5;
 	}
 
 	.post{

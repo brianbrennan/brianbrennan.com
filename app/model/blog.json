@@ -3,12 +3,14 @@
 		"id": 1,
 		"title":"A Breakdown of API's",
 		"date": "10.27.2015",
-		"page": "/blog/api-breakdown"
+		"page": "/blog/api-breakdown",
+		"snippet":"A brief look into what API's are, and why there are so important."
 	},
 	{
 		"id": 2,
 		"title": "Rebuilding Enigma",
 		"date": "11.3.2015",
-		"page": "/blog/rebuilding-enigma"
+		"page": "/blog/rebuilding-enigma",
+		"snippet": "An in depth look at creating a simple Enigma-like encryption program."
 	}
 ]

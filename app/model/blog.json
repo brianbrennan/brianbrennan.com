@@ -19,5 +19,12 @@
 		"date": "11.30.2015",
 		"page": "/blog/online-education",
 		"snippet": "A comparison of eLearning platforms"
+	},
+	{
+		"id": 4,
+		"title": "Setting Up Sass",
+		"date":"12.22.15",
+		"page": "/blog/setting-up-sass",
+		"snippet":"How to set up Sass in your Workflow"
 	}
 ]

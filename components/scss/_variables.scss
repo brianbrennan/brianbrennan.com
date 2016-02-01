@@ -29,6 +29,7 @@ $light-grey 	: #ddd;
 $lighter-grey	: #efefef;
 $grey			: #989898;
 $green			: #61D2B4;
+$white			: #FFF;
 
 
 //----------------------------Spacing
@@ -53,3 +54,14 @@ $medFontSize:	20px;
 $lgFontSize:	36px;
 $xlFontSize:	48px;
 $xxlFontSize:	72px;
+
+//----------------------------Mixins
+
+@mixin headline($color){
+	color: $color;
+	font-family:$headline;
+	font-weight:700;
+	letter-spacing:0.1em;
+	font-size:$xxlFontSize;
+	text-transform:uppercase;
+}

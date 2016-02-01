@@ -70,3 +70,15 @@
 		top:80vh;
 	}
 }
+
+//---------------------Nav Animation
+
+@keyframes mobileSlideNav {
+	0% 		{left:100%}
+	100%	{left:0}
+}
+
+@keyframes mobileSlideNavOut {
+	0% 		{left:100%}
+	100%	{left:0}
+}

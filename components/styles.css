@@ -152,7 +152,8 @@ section {
 
 a {
   text-decoration: underline;
-  color: #61D2B4; }
+  color: #61D2B4;
+  font-family: 'Lato', sans-serif; }
 
 blockquote {
   margin: 30px 60px;
@@ -173,10 +174,10 @@ pre {
   line-height: 140%;
   font-family: 'PT Mono';
   font-size: 14px;
-  white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -o-pre-wrap;
-  word-wrap: break-word; }
+  white-space: no-wrap;
+  white-space: -moz-no-wrap;
+  white-space: -o-no-wrap;
+  overflow-x: scroll; }
   pre .line::before {
     content: counter(line-numbering);
     counter-increment: line-numbering;
@@ -211,6 +212,13 @@ header {
     width: 150px;
     display: block;
     margin: auto; }
+  h3, h2 {
+    font-size: 36px;
+    text-align: center; }
+  p {
+    font-size: 20px; }
+  span {
+    font-family: 'Lato', sans-serif; }
   .nav-toggle {
     float: right;
     position: fixed;
@@ -275,8 +283,13 @@ header {
     .nav-toggle.active {
       color: #FFF;
       background-color: rgba(34, 34, 34, 0); }
+      .nav-toggle.active:hover span {
+        background-color: #61D2B4; }
       .nav-toggle.active span {
-        background-color: #FFF; }
+        background-color: #FFF;
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        transition: 0.2s; }
         .nav-toggle.active span:nth-child(1) {
           top: 12px;
           left: 23px;
@@ -335,6 +348,88 @@ header {
       transition: 0.2s; }
       .nav-list li:hover {
         color: #61D2B4; }
+  .contact-top {
+    color: #FFF;
+    background-color: #61D2B4;
+    padding: 15px;
+    text-decoration: none;
+    position: absolute;
+    top: 15px;
+    right: 15px; }
   .page {
     padding: 15px;
-    font-size: 1em; } }
+    font-size: 1em; }
+  .hero {
+    height: 90vh;
+    background: #efefef;
+    padding-top: 10vh;
+    margin-top: -11vh; }
+    .hero .focus {
+      position: absolute;
+      top: 30vh;
+      padding: 15px; }
+    .hero h2 {
+      font-size: 72px;
+      margin-left: -3px;
+      text-align: left; }
+  .piece {
+    text-align: center;
+    margin-top: 60px; }
+  .view-all {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 60px;
+    display: block;
+    text-decoration: none; }
+  .process-section .left, .process-section .right {
+    padding: 15px; }
+  .process-section .left {
+    margin-top: 30px; }
+  .process-section h4 {
+    font-size: 48px; }
+  .contact-section input, .contact-section textarea, .contact .content input, .contact .content textarea {
+    padding: 8px;
+    width: calc(100% - 30px);
+    margin: 15px 15px 0 15px;
+    box-sizing: border-box;
+    border: 1px solid #989898; }
+    .contact-section input:focus, .contact-section textarea:focus, .contact .content input:focus, .contact .content textarea:focus {
+      border-color: #61D2B4;
+      color: #61D2B4; }
+      .contact-section input:focus::-webkit-input-placeholder, .contact-section textarea:focus::-webkit-input-placeholder, .contact .content input:focus::-webkit-input-placeholder, .contact .content textarea:focus::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: #61D2B4; }
+      .contact-section input:focus:-moz-placeholder, .contact-section textarea:focus:-moz-placeholder, .contact .content input:focus:-moz-placeholder, .contact .content textarea:focus:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #61D2B4;
+        opacity: 1; }
+      .contact-section input:focus::-moz-placeholder, .contact-section textarea:focus::-moz-placeholder, .contact .content input:focus::-moz-placeholder, .contact .content textarea:focus::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #61D2B4;
+        opacity: 1; }
+      .contact-section input:focus:-ms-input-placeholder, .contact-section textarea:focus:-ms-input-placeholder, .contact .content input:focus:-ms-input-placeholder, .contact .content textarea:focus:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #61D2B4; }
+      .contact-section input:focus:placeholder-shown, .contact-section textarea:focus:placeholder-shown, .contact .content input:focus:placeholder-shown, .contact .content textarea:focus:placeholder-shown {
+        /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+        color: #61D2B4; }
+  .contact-section textarea, .contact .content textarea {
+    resize: none;
+    height: 120px; }
+  .contact-section button, .contact .content button {
+    display: block;
+    width: 120px;
+    background-color: #61D2B4;
+    border: none;
+    padding: 15px;
+    color: #FFF;
+    margin: 15px auto;
+    cursor: pointer; }
+  .about h2 {
+    font-size: 48px;
+    margin-bottom: 30px; }
+  .about h3 {
+    font-size: 20px;
+    margin-bottom: 15px; }
+  .about p {
+    margin-bottom: 15px; } }

@@ -62,5 +62,5 @@ route.config(function($routeProvider, $locationProvider){
 		templateUrl: 'app/views/work/enigmate.html'
 	});
 
-	$locationProvider.html5Mode(true);
+	// $locationProvider.html5Mode(true);
 });

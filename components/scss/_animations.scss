@@ -70,3 +70,14 @@
 		top:80vh;
 	}
 }
+
+//--------------------Homepage BG Animation
+@keyframes particleAnimation
+{
+    from {
+        left: -100px;
+    }
+    to {
+        left: calc( 100% + 100px );
+    }
+}

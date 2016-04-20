@@ -1,9 +1,285 @@
-<div class="slimpickin page">
+<div class="slimpickin page work-page">
 	<div class="wrapper">
 		<div class="info">
 			<h2>Slimpickin</h2>
 			
-			<span>Fall 2015</span>
+			<span class="date">Fall 2015</span>
+
+			<div class="content">
+				<p>Slimpickin is a DOM element selection tool meant to keep your JavaScript code small and maintainable. If you’re currently using a large library like jQuery in your project, but only using it for some small object manipulation, Slimpickin is right for you.</p>
+
+				<p>At only 3kb, Slimpickin can fit into any project’s performance budget. Slimpickin uses syntax similar to all of your favorite tools you use, so your transition to using this sleek, slick, and small new tool will take no time at all!</p>
+			</div>
+
+			<img src="components/img/slimpickin/logo.png" alt="Slimpickin" class="work-logo">
+
+			<a href="https://github.com/brianbrennan/slimpickin" class="view-on-github">View On Github</a>
+
+			<div class="content">
+				<h3>
+					Installation
+				</h3>
+				<p>
+					Installing Slimpickin is extremely simple. Simply download the source file from this repository, and add it to a script tag on your web page.
+				</p>
+				<pre>
+&lt;script src="js/slimpickin.js"&gt;&lt;/script&gt;
+				</pre>
+				<p>
+					If you have Bower, you can install using the simple command below instead
+				</p>
+				<pre>
+bower install slimpickin
+				</pre>
+				<p>
+					Then at the bottom of your web page, just link to Slimpickin in your Bower folder.
+				</p>
+				<pre>
+&lt;script src="bower_components/slimpickin/dist/slimpickin.min.js"&gt;&lt;/script&gt;
+				</pre>
+				<h3>How to Use</h3>
+				<p>
+					Once again, Slimpickin shines with its simplicity. If you already use a JS library like JQuery, then Slimpickin's syntax will be fairly familiar to you. To select any DOM element, simply pass a selector string to Slimpickin, like so:
+				</p>
+
+				<pre>
+s('p'); // Will get all p tags in the DOM
+				</pre>
+
+				<p>
+					Slimpickin's instances can be called in the above manner, or on individual levels. If you would like to select the third paragraph element in the DOM, for example, you would write the following:
+				</p>
+
+				<pre>
+s('p', 2); //Note the new parameter, and that it is 0 index based
+				</pre>
+
+				<p>
+					Slimpickin also has the option of having a DOM element as a constructor parameter. This is extremely useful when implementing in functions, as it allows for the 'this' keyword to be used.
+				</p>
+
+				<pre>
+s('p').on('click', function(){
+	s(this).css('color', 'red');
+} // sets color of clicked paragraph to red
+				</pre>
+
+				<p>
+					Method chaining is a useful feature in Slimpickin. This allows you to call multiple functions one after the other, so long as the prior method returns a Slimpickin Object
+				</p>
+
+				<pre>
+s('p').css('color','red').attr('value', '5').insert('Hey there');
+//sets all paragraph color to red, value to five, and inserts 'Hey There';
+				</pre>
+
+				<h3>
+					Versions
+				</h3>
+
+				<p>
+					Current version - 0.8.0 <br>
+
+					0.8.0 is the only release right now, with a major and full release coming soon
+				</p>
+
+				<h3>Documentation</h3>
+
+				<p>
+					The following is a list of documentation for Slimpickin. It is still under development and may change in the future. The current version of Slimpickin is v0.8.2
+				</p>
+					<pre>
+s(String)
+					</pre>
+				<p>
+					At the root of Slimpickin is this object selection function. Taking a String as a parameter, this function will return an object based on the selector passed in ot the function.
+				</p>
+
+				<h3>
+					Methods
+				</h3>
+
+				<p></p>
+
+				<pre>
+innerHTML(String)
+				</pre>
+				<p>
+					If no parameter provided, returns element's inner HTML as an Array <br>
+
+					Else, sets the inner HTML of the elements to the String provided, and returns Slimpickin Object
+				</p>
+				<pre>
+outerHTML(String)
+				</pre>
+				<p>
+					If no parameter provided, returns element's outer HTML as an Array <br>
+
+					Else, sets the outer HTML of the elements to the String provided, and returns Slimpickin Object
+				</p>
+				<pre>
+css(String, String)
+				</pre>
+				<p>
+					If second parameter provided, sets css style of first parameter to second parameter. Returns Slimpickin Object. <br>
+
+					Else, returns css attribute of first parameter, as an Array
+				</p>
+				<pre>
+attr(String, String)
+				</pre>
+				<p>
+					If second parameter provided, sets attribute of first parameter to second parameter. Returns Slimpickin Object. <br>
+
+					Else, returns attribute of first parameter, as an Array
+				</p>
+				<pre>
+class(String)
+				</pre>
+				<p>
+					If no parameter provided, returns element's classes as an Array <br>
+
+					Else, sets the class of the elements to the given String. Returns Slimpickin Object <br>
+
+					<i>NOTE: This is not an additive method. The provided String will overwrite all classes</i>
+				</p>
+				<pre>
+_id(String)
+				</pre>
+				<p>
+					If no parameter provided, returns element's id's as an Array <br>
+
+					Else, sets the id of the elements to the given String. Returns Slimpickin Object <br>
+
+					<i>NOTE: This is not an additive method. The provided String will overwrite all id's. Also note that the id will be added to all selected elements. This is not ideal, and should be reserved for single DOM elements</i>
+				</p>
+				<pre>
+addClass(String)
+				</pre>
+				<p>
+					Adds given parameter as a class to the selected elements. Returns Slimpickin Object
+				</p>
+				<pre>
+addId(String)
+				</pre>
+				<p>
+					Adds given parameter as a id to the selected elements. Returns Slimpickin Object
+				</p>
+				<pre>
+removeClass(String)
+				</pre>
+				<p>
+					Removes given parameter as a class to the selected elements. Returns Slimpickin Object
+				</p>
+				<pre>
+removeId(String)					
+				</pre>
+				<p>
+					Removes given parameter as a id to the selected elements. Returns Slimpickin Object
+				</p>
+				<pre>
+hasClass(String)					
+				</pre>
+				<p>
+					Returns an Array of Booleans based on if the selected element has the given parameter as a class.
+				</p>
+				<pre>
+hasId(String)
+				</pre>
+				<p>
+					Returns an Array of Booleans based on if the selected element has the given parameter as an id.
+				</p>
+				<pre>
+at(Int)
+				</pre>
+				<p>
+					Returns Element Object at the given parameter position
+				</p>
+				<pre>
+first()
+				</pre>
+				<p>
+					Returns first Element Object of selected
+				</p>
+				<pre>
+last()
+				</pre>
+				<p>
+					Returns lastt Element Object of selected
+				</p>
+				<pre>
+each(callback)
+				</pre>
+				<p>
+					Performs the given callback function x number of times, where x is the number of selected elements <br>
+
+					Returns Slimpickin Object
+				</p>
+				<pre>
+insert(String)
+				</pre>
+				<p>
+					Adds the given String to the end of the elements' inner HTML. <br>
+
+					Returns Slimpickin Object
+				</p>
+				<pre>
+presert(String)
+				</pre>
+				<p>
+					Adds the given String to the beginning the elements' inner HTML. <br>
+
+					Returns Slimpickin Object
+				</p>
+				<pre>
+append(String)
+				</pre>
+				<p>
+					Adds the given String after the elements' outer HTML. <br>
+
+					Returns Slimpickin Object
+				</p>
+				<pre>
+prepend(String)					
+				</pre>
+				<p>
+					Adds the given String before the elements' outer HTML. <br>
+
+					Returns Slimpickin Object
+				</p>
+				<pre>
+wrap(String, String)
+				</pre>
+				<p>
+					Adds the given Strings to before and after the elements' outer HTML, respectively <br>
+
+					Returns Slimpickin Object
+				</p>
+				<pre>
+on(String, callback)
+				</pre>
+				<p>
+					Adds an event listener to all selected elements, based on the first parameter. Performs provided callback with event listener. <br>
+
+					Returns Slimpickin Object
+				</p>
+				<pre>
+click(callback)
+				</pre>
+				<p>
+					Adds a click event listener to all selected elements. Performs provided callback with event listener. <br>
+
+					Returns Slimpickin Object
+				</p>
+				<pre>
+hover(callback, callback2)
+				</pre>
+				<p>
+					Adds a mouseover event listener to all selected elements. Performs provided callback with event listener. If second callback provided, will add mouseout event listener that performs second callback. <br>
+
+					Returns Slimpickin Object
+				</p>
+			</div>
 		</div>
 	</div>
 </div>

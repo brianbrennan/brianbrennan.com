@@ -66,6 +66,16 @@ pre{
       opacity: 0.5;
       color:$grey;
   }
+  	script{
+  		display:inline-block;
+  	}
+}
+
+i{
+	font-style:italic;
+	font-size:$smFontSize;
+	margin:$tny 0;
+	color:$black;
 }
 
 //--------------------------General Pieces
@@ -790,6 +800,12 @@ button[type="submit"]{
 	.full{
 		width:100%;
 	}
+
+	.work-logo{
+		text-align:center;
+		display:block;
+		margin:auto;
+	}
 }
 
 //-----------------------------------------Specific Work Pages
@@ -818,6 +834,31 @@ button[type="submit"]{
 		text-align:center;
 		display:block;
 		margin:auto;
+	}
+}
+
+//------------------------Slimpickin
+
+.slimpickin{
+	.view-on-github{
+		background-color:$black;
+		display:block;
+		padding:$sm;
+		color:$white;
+		width:$xxl;
+		margin:$reg auto;
+		font-size:$regFontSize;
+		font-family:$body;
+		text-decoration:none;
+		text-align:center;
+
+		&:hover{
+			color:$green;
+		}
+	}
+
+	h3{
+		margin-top:$reg;
 	}
 }
 

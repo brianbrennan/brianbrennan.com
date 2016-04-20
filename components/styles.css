@@ -180,6 +180,14 @@ pre {
     text-align: right;
     opacity: 0.5;
     color: #989898; }
+  pre script {
+    display: inline-block; }
+
+i {
+  font-style: italic;
+  font-size: 14px;
+  margin: 8px 0;
+  color: #222; }
 
 .wrapper {
   position: relative; }
@@ -730,6 +738,10 @@ button[type="submit"] {
     color: #989898; }
 .work-page .full {
   width: 100%; }
+.work-page .work-logo {
+  text-align: center;
+  display: block;
+  margin: auto; }
 
 .aba .aba-logo {
   text-align: center;
@@ -744,3 +756,19 @@ button[type="submit"] {
   text-align: center;
   display: block;
   margin: auto; }
+
+.slimpickin .view-on-github {
+  background-color: #222;
+  display: block;
+  padding: 15px;
+  color: #FFF;
+  width: 120px;
+  margin: 30px auto;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  text-align: center; }
+  .slimpickin .view-on-github:hover {
+    color: #61D2B4; }
+.slimpickin h3 {
+  margin-top: 30px; }

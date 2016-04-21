@@ -1,9 +1,142 @@
-<div class="enigma page">
+<div class="enigma page work-page">
 	<div class="wrapper">
 		<div class="info">
 			<h2>Enigma.js</h2>
 			
-			<span>Summer 2015</span>
+			<span class="date">Summer 2015 &mdash; Fall 2015</span>
+
+			<div class="content">
+				<p>
+					Enigma.js is an encryption engine designed after the <a href="https://en.wikipedia.org/wiki/Enigma_machine" target="_blank">WW2-era Enigma machine</a>. Using an key-cipher encryption method, Enigma.js allows the user to safely encrypt information in their web application by using a secret key of their own choosing. Published using NPM, Enigma.js is ready to be dropped into a personal project of your choosing. Enigma.js is written in pure JavaScript, and is perfect for web based encryption, or Node applications.*
+				</p>
+			</div>
+
+			<div class="links">
+				<img src="/components/img/enigma-js/logo.png" alt="" class="work-logo">
+				<a href="https://www.npmjs.com/package/enigma.js" target="_blank" class="view-on-npm">View On NPM</a> <a href="https://github.com/brianbrennan/enigma.js" target="_blank" class="view-on-github">View on Github</a>
+			</div>
+
+			<div class="content">
+				<p>
+					Users have the option to choose their encryption method, be it simple letters (base 52) or a much more robust semi-full ASCII table (base 92). By using semi-full ASCII, encrypted information is safer than war messages during WW2. To see a simple rundown of how this software was built in its earliest phases, as well as learning how it works in principle, please read <a ng-href="/#/blog/rebuilding-enigma">Rebuilding the Enigma</a>.
+				</p>
+
+				<p><i>*Since Enigma.js is in the early stage of development, it is not designed to be used in production level applications.</i></p>
+			
+
+			<h3>How to Install</h3>
+
+			<p>If you’re using NPM as a means of managing your node modules, than installing enigma.js is as simple as typing:</p>
+
+			<pre>
+npm install enigma.js --save				
+			</pre>
+
+			<p><i> Note that the --save suffix is an optional piece that will add enigma.js to your package.json dependencies</i></p>
+
+			<h3>Instantiation</h3>
+
+			<p>In order to initiate enigma.js in your Node Application, you must add it as a module to your main application javascript file. Below is an example of doing just that.</p>
+
+			<pre>
+var Enigma = require('./enigma');
+			</pre>
+
+			<p>
+				Once the module has been added to your application, an Enigma object must be added to your application in order to be used. Below is an example of instantiation
+			</p>
+
+			<pre>
+var e = new Enigma({
+	sequence: 'ascii',
+	rotorSettings: 'ae3',
+	spaces: true
+});				
+			</pre>
+			<p>
+				Note the parameter object in the instantiation of our object. Enigma.js has three fields to be added upon instantiation in the parameter object.
+			</p>
+
+			<pre>
+rotorSettings 	→ 	can be any string. This will act as your key 
+					for they encryption
+
+sequence 	→ 	can be ‘caps’,’ascii’, or ‘alphanumeric’. 
+				This will change the output of the encryption 
+				to the desired sequence.
+
+spaces 		→ 	boolean. Determines if the output 
+				will add in spaces or 
+				not to the output.
+
+			</pre>
+			<h3>
+				Methods
+			</h3>
+			<p></p>
+
+			<pre>
+encrypt(String)
+			</pre>
+
+			<p>
+				Will encrypt any string provided using the parameters set upon instantiation. Returns the encrypted message.
+			</p>
+
+			<pre>
+decrypt(String)
+			</pre>
+
+			<p>			
+				Will decrypt any string provided that has already passed through the encrypt method. The settings on the object must be identical in order for proper decryption to occur. 
+			</p>
+			<p>
+				That’s it! Using these two simple methods, Enigma can provide String encryption based on cipher-key algorithms. If you’d like to see what this encryption looks like in action, please visit the Enigmate page, or the Enigmate site itself. You can also view the code on <a href="https://www.npmjs.com/package/enigma.js" target="_blank">NPM</a>, or <a href="https://github.com/brianbrennan/enigma.js" target="_blank">Github</a>. 
+			</p>
+			<p>
+				Below are examples of actual encryption/decryption inputs and outputs.
+			</p>
+
+			<h3>
+				ASCII
+			</h3>
+			<p></p>
+			<pre>
+//Settings
+//sequence → ascii
+//spaces → false
+//rotorSettings → hello
+
+Welcome to the Jungle → &lt;O[Whkh($$73,.KzMKISQ
+
+			</pre>
+			<h3>
+				Caps
+			</h3>
+			<p></p>
+			<pre>
+//sequence → caps
+//rotorSettings → hello
+//spaces → true
+
+WELCOME TO THE JUNGLE → ANZVMPM LL ATV KAYWGE
+			</pre>
+			<p><i>NOTE: input using the caps sequence must be capital letters!</i></p>
+
+			<h3>Alphanumeric</h3>
+			<p></p>
+
+			<pre>
+//sequence → alphanumeric
+//rotorSettings → heelo
+//spaces → true
+
+Welcome to the Jungle → mprdkdQ VL H0s pvjYYM
+
+			</pre>
+
+			<p><i>NOTE: input using the caps sequence must be Alphanumeric characters!</i></p>
+			</div>
 		</div>
 	</div>
 </div>

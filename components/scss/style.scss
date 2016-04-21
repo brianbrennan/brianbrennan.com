@@ -862,5 +862,55 @@ button[type="submit"]{
 	}
 }
 
+//------------------------Enigma-js
+
+.enigma{
+	h3{
+		margin-top:$reg;
+	}
+
+	.view-on-github, .view-on-npm{
+		background-color:$black;
+		display:inline-block;
+		padding:$sm;
+		color:$white;
+		width:$xxl;
+		margin:$reg auto;
+		font-size:$regFontSize;
+		font-family:$body;
+		text-decoration:none;
+		text-align:center;
+
+		&:hover{
+			color:$green;
+		}
+	}
+
+	.links{
+		text-align:center;
+	}
+}
+
+//-----------------------Enigmate
+
+.enigmate{
+	.view-site{
+		background-color:$black;
+		display:block;
+		padding:$sm;
+		color:$white;
+		width:$xxl;
+		margin:$reg auto;
+		font-size:$regFontSize;
+		font-family:$body;
+		text-decoration:none;
+		text-align:center;
+
+		&:hover{
+			color:$green;
+		}
+	}
+}
+
 
 

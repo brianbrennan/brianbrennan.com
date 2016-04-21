@@ -772,3 +772,35 @@ button[type="submit"] {
     color: #61D2B4; }
 .slimpickin h3 {
   margin-top: 30px; }
+
+.enigma h3 {
+  margin-top: 30px; }
+.enigma .view-on-github, .enigma .view-on-npm {
+  background-color: #222;
+  display: inline-block;
+  padding: 15px;
+  color: #FFF;
+  width: 120px;
+  margin: 30px auto;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  text-align: center; }
+  .enigma .view-on-github:hover, .enigma .view-on-npm:hover {
+    color: #61D2B4; }
+.enigma .links {
+  text-align: center; }
+
+.enigmate .view-site {
+  background-color: #222;
+  display: block;
+  padding: 15px;
+  color: #FFF;
+  width: 120px;
+  margin: 30px auto;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  text-align: center; }
+  .enigmate .view-site:hover {
+    color: #61D2B4; }

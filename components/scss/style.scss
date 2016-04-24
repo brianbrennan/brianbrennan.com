@@ -806,6 +806,23 @@ button[type="submit"]{
 		display:block;
 		margin:auto;
 	}
+
+	.view-site{
+		background-color:$black;
+		display:block;
+		padding:$sm;
+		color:$white;
+		width:$xxl;
+		margin:$reg auto;
+		font-size:$regFontSize;
+		font-family:$body;
+		text-decoration:none;
+		text-align:center;
+
+		&:hover{
+			color:$green;
+		}
+	}
 }
 
 //-----------------------------------------Specific Work Pages
@@ -894,23 +911,17 @@ button[type="submit"]{
 //-----------------------Enigmate
 
 .enigmate{
-	.view-site{
-		background-color:$black;
-		display:block;
-		padding:$sm;
-		color:$white;
-		width:$xxl;
-		margin:$reg auto;
-		font-size:$regFontSize;
-		font-family:$body;
-		text-decoration:none;
-		text-align:center;
 
-		&:hover{
-			color:$green;
-		}
-	}
 }
 
+//-----------------------Free Post
+
+.free-post{
+	.free-post-logo{
+		width:$xxl * 3;
+		margin:auto;
+		display:block;
+	}
+}
 
 

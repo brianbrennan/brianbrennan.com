@@ -61,8 +61,8 @@
 	},
 	{
 		"id": 7,
-		"name": "Freepost",
-		"thumbnail": "",
+		"name": "Free Post",
+		"thumbnail": "components/img/free-post/logo.svg",
 		"images": "",
 		"url": "freepost.co",
 		"page": "/free-post",
@@ -72,7 +72,7 @@
 	{
 		"id": 8,
 		"name": "Brockton's Promise",
-		"thumbnail": "",
+		"thumbnail": "components/img/brocktons-promise/logo.jpg",
 		"images": "",
 		"url": "Broctonspromise.org",
 		"page": "/brocktons-promise",
@@ -82,11 +82,21 @@
 	{
 		"id": 9,
 		"name": "Game Grumps",
-		"thumbnail": "",
+		"thumbnail": "components/img/game-grumps/logo.png",
 		"images": "",
 		"url": "gamegrumps.co",
 		"page": "/game-grumps",
 		"description": "",
 		"tags":["Angular","API","SPA","SCSS","CSS","Web Development","Web Design"]
+	}, 
+	{
+		"id": 10,
+		"name": "McMahon Advisory Group",
+		"thumbnail": "components/img/mcmahon-advisory-group/logo.png",
+		"images": "",
+		"url": "mcmahonadvisorygroup.com",
+		"page": "/mcmahon-advisory-group",
+		"description": "",
+		"tags":["Web Design","Wix"]
 	}
 ]

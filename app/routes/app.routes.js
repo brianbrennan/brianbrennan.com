@@ -62,6 +62,22 @@ route.config(function($routeProvider, $locationProvider){
 
 	.when('/enigmate', {
 		templateUrl: 'app/views/work/enigmate.html'
+	})
+
+	.when('/free-post', {
+		templateUrl: 'app/views/work/free-post.html'
+	})
+
+	.when('/game-grumps', {
+		templateUrl: 'app/views/work/game-grumps.html'
+	})
+
+	.when('/brocktons-promise', {
+		templateUrl: 'app/views/work/brocktons-promise.html'
+	})
+
+	.when('/mcmahon-advisory-group', {
+		templateUrl: 'app/views/work/mcmahon-advisory-group.html'
 	});
 
 	// $locationProvider.html5Mode(true);

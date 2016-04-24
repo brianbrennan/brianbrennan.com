@@ -742,6 +742,19 @@ button[type="submit"] {
   text-align: center;
   display: block;
   margin: auto; }
+.work-page .view-site {
+  background-color: #222;
+  display: block;
+  padding: 15px;
+  color: #FFF;
+  width: 120px;
+  margin: 30px auto;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  text-align: center; }
+  .work-page .view-site:hover {
+    color: #61D2B4; }
 
 .aba .aba-logo {
   text-align: center;
@@ -791,16 +804,7 @@ button[type="submit"] {
 .enigma .links {
   text-align: center; }
 
-.enigmate .view-site {
-  background-color: #222;
-  display: block;
-  padding: 15px;
-  color: #FFF;
-  width: 120px;
-  margin: 30px auto;
-  font-size: 16px;
-  font-family: 'Lato', sans-serif;
-  text-decoration: none;
-  text-align: center; }
-  .enigmate .view-site:hover {
-    color: #61D2B4; }
+.free-post .free-post-logo {
+  width: 360px;
+  margin: auto;
+  display: block; }

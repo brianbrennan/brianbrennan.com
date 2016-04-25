@@ -4,16 +4,16 @@ angular.module('contactCtrl', [])
 		$scope.sendMessage = function(input){
 			$http({
 				method: 'POST',
-				url: '/processForm.php',
+				url: 'processForm.php',
 				data: input,
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 			})
 			.success( function(data) {
-				if ( data.success ) {
-					$scope.success = true;
-				} else {
+				if(data.success)
+					$scope.success =  true;
+				else
 					$scope.error = true;
-				}
-			} );
+				
+			} )
 		}
 	});

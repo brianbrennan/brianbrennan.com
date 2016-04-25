@@ -83,147 +83,94 @@ i{
 
 @include breakpoint(760px){
 
-.wrapper{
-	position:relative;
+	.wrapper{
+		position:relative;
 
-	@include breakpoint(1440px){
-		@include container(1140px);
+		@include breakpoint(1440px){
+			@include container(1140px);
+		}
 	}
-}
 
-header{
-	font-family:$body;
-	position:fixed;
-	z-index:50;
-	width:100%;
-	padding-bottom:$med;
-	@include linear-gradient(white 50%, transparent, $fallback: transparent);
-	@include transition(0.2s);
-	
-	a{
+	header{
+		font-family:$body;
+		position:fixed;
+		z-index:50;
+		width:100%;
+		padding-bottom:$med;
+		@include linear-gradient(white 50%, transparent, $fallback: transparent);
 		@include transition(0.2s);
-		#logo{
-			@include span(1 of 8);
-			margin-top:$sm;
-		}
 
-		path{
+		a{
 			@include transition(0.2s);
+			#logo{
+				@include span(1 of 8);
+				margin-top:$sm;
+			}
+
+			path{
+				@include transition(0.2s);
+			}
+
+			&:hover{
+				path{
+					fill:$green;
+				}
+			}
 		}
 
-		&:hover{
-			path{
-				fill:$green;
+		nav{
+			float:right;
+
+			li{
+				display:inline-block;
+				padding:$reg;
+
+				a{
+					color:$grey;
+					text-decoration:none;
+
+					&:hover{
+						color:$green;
+					}
+				}
 			}
 		}
 	}
 
-	nav{
-		float:right;
+	header.dark{
+		@include linear-gradient(transparent, transparent, $fallback: transparent);
+	}
+
+
+	footer{
+		width:100%;
+		padding:$reg 0;
+
+		.wrapper{
+			@include layout(split);
+		}
+
+		.footer-section{
+			box-sizing:border-box;
+			min-height:138px;
+			@include span(3 of 9);
+			border-right:1px solid $lighter-grey;
+
+			&:nth-child(3n){
+				border-right:none;
+			}
+		}
 
 		li{
-			display:inline-block;
-			padding:$reg;
+			font-family:$body;
+			margin:$sm 0;
+			@include span(6 of 12);
+			&:nth-child(2n){
+				@include last();
+			}
 
 			a{
 				color:$grey;
-				text-decoration:none;
-
-				&:hover{
-					color:$green;
-				}
-			}
-		}
-	}
-}
-
-header.dark{
-	@include linear-gradient(transparent, transparent, $fallback: transparent);
-}
-
-
-footer{
-	width:100%;
-	padding:$reg 0;
-
-	.wrapper{
-		@include layout(split);
-	}
-
-	.footer-section{
-		box-sizing:border-box;
-		min-height:138px;
-		@include span(3 of 9);
-		border-right:1px solid $lighter-grey;
-
-		&:nth-child(3n){
-			border-right:none;
-		}
-	}
-
-	li{
-		font-family:$body;
-		margin:$sm 0;
-		@include span(6 of 12);
-		&:nth-child(2n){
-			@include last();
-		}
-
-		a{
-			color:$grey;
-			text-decoration:none;
-
-			&:hover{
-				color:$black;
-			}
-		}
-	}
-
-	.social{
-		font-family:$socicon;
-		font-size:$lgFontSize;
-		text-align:center;
-		margin-left:-($reg);
-
-		span{
-			display:inline-block;
-			margin:$med $reg;
-
-			a{
-				text-decoration:none;
-				color:$light-grey;
-
-				&:hover{
-					color:$green;
-				}
-			}
-		}
-
-		.codepen{
-			width:$lg;
-			height:$lg;
-			margin-bottom:-($sm);
-			background-image: url('img/codepen.png');
-			background-size:100%;
-
-			&:hover{
-				background-image: url('img/codepen-hover.png');
-			}
-		}
-	}
-
-	.recent-post{
-		display:inline-block;
-		padding:0 $sm;
-		h5{
-			margin-bottom:$tny;
-			color:$light-grey;
-		}
-		h4{
-			font-size:$lgFontSize;
-			color:$grey;
-			a{
-				color:inherit;
 				text-decoration:none;
 
 				&:hover{
@@ -232,421 +179,307 @@ footer{
 			}
 		}
 
-		span{
-			display:block;
-			font-family:$body;
-			margin-top:$tny;
-		}
-	}
+		.social{
+			font-family:$socicon;
+			font-size:$lgFontSize;
+			text-align:center;
+			margin-left:-($reg);
 
-	.copyright{
-		font-size:11px;
-		font-family:$body;
-		text-align:center;
-	}
-}
+			span{
+				display:inline-block;
+				margin:$med $reg;
 
-.divide{
-	clear:both;
-	width:300px;
-	height:1px;
-	background-color:$lighter-grey;
-	margin:$reg auto;
-}
+				a{
+					text-decoration:none;
+					color:$light-grey;
 
-input[type="text"],input[type="email"]{
-	padding:$tny;
-	border:1px solid $light-grey;
-	color:$grey;
-
-	&::-webkit-input-placeholder {
-		color: $grey;
-		@include transition(0.2s);
-	}
-
-	&:-moz-placeholder { /* Firefox 18- */
-		color: $grey;
-		@include transition(0.2s);
-	}
-
-	&::-moz-placeholder {  /* Firefox 19+ */
-		color: $grey;
-		@include transition(0.2s);  
-	}
-
-	&:-ms-input-placeholder {  
-		color: $grey;
-		@include transition(0.2s);  
-	}
-
-	@include transition(0.2s);
-
-	&:focus{
-		border-color:$green;
-		color:$green;
-
-		&::-webkit-input-placeholder {
-			color: $green;
-		}
-
-		&:-moz-placeholder { /* Firefox 18- */
-			color: $green;  
-		}
-
-		&::-moz-placeholder {  /* Firefox 19+ */
-			color: $green;  
-		}
-
-		&:-ms-input-placeholder {  
-			color: $green;  
-		}
-	}
-}
-
-button[type="submit"]{
-	border:none;
-	background-color:$black;
-	color:white;
-	padding:$tny $sm;
-	cursor:pointer;
-
-	&:hover{
-		color:$green;
-	}
-}
-
-
-//--------------------------Home Page
-.hero{
-	background-color:$lighter-grey;
-	height:100vh;
-	position:relative;
-
-	.particles{
-		position:absolute;
-		height: 100%;
-		width:100%;
-		z-index:10;
-		overflow:hidden;
-		
-
-		.p{
-			position:fixed;
-			left:0px;
-			top:50px;
-			width:1px;
-			height:3px;
-			background-color:$green;
-			position:absolute;
-			animation-name:particleAnimation;
-			animation-timing-function: linear;
-			animation-iteration-count: infinite;
-
-		}
-		.p::before{
-			position:absolute;
-			display:block;
-			content:"";
-			width:100px;
-			right:1px;
-			top:0px;
-			height:3px;
-			background: linear-gradient(to right, rgba($green,0) 0%,rgba($green,0.4) 100%); 
-		}
-		.p-1{
-			animation-duration:10s;
-		}
-		.p-2{
-			animation-duration:5s;
-			top:60%;
-		}
-		.p-3{
-			animation-duration:20s;
-			top:90%;
-		}
-		.p-4{
-			animation-duration:8s;
-			top:82%;
-		}
-		.p-5{
-			animation-duration:12s;
-			top:32%;
-		}
-		.p-6{
-			animation-duration:7s;
-			top:40%;
-		}
-		.p-7{
-			animation-duration:11s;
-			top:78%;
-		}
-		.p-8{
-			animation-duration:9s;
-			top:54%;
-		}
-		.p-9{
-			animation-duration:6s;
-			top:70%;
-		}
-		.p-10{
-			animation-duration:8s;
-			top:82%;
-		}
-	}
-
-	.focus{
-		top:30vh;
-		position:absolute;
-		z-index:20;
-	}
-
-	h2{
-		font-size:$xxl;
-	}
-
-	p{
-		padding-left:$tny;
-	}
-
-	.arrow{
-		height:$med;
-		width:$med;
-		border-right:2px solid $grey;
-		border-bottom:2px solid $grey;
-		position:absolute;
-		left:50%;
-		top:80vh;
-		@include transform(rotate(45deg));
-		@include animation(color-arrow 2s ease-in-out infinite);
-		@include animation-delay(0.5s);
-	}
-}
-
-.work-section, .about-section, .process-section, .contact-section{
-	h3{
-		text-align:center;
-		font-size:$lgFontSize;
-	}
-
-	.content{
-		margin:$reg auto;
-		width:600px;
-	}
-}
-
-.work-section{
-	padding-top:$lg + $sm + $tny;
-	.pieces{
-		margin-top:$lg;
-
-		.piece{
-			@include span(1);
-			position:relative;
-			min-height:$xxl;
-
-			.overlay{
-				position:absolute;
-				left:0;
-				top:0;
-				width:100%;
-				height:100%;
-				display:block;
-				opacity:0;
-				@include linear-gradient(45deg, $green 0%, rgba(255,255,255,0.8) 50%);
-				@include transition(0.2s);
-
-				&:hover{
-					opacity:0.5;
-					
+					&:hover{
+						color:$green;
+					}
 				}
 			}
 
-			img{
+			.codepen{
+				width:$lg;
+				height:$lg;
+				margin-bottom:-($sm);
+				background-image: url('img/codepen.png');
+				background-size:100%;
+
+				&:hover{
+					background-image: url('img/codepen-hover.png');
+				}
+			}
+		}
+
+		.recent-post{
+			display:inline-block;
+			padding:0 $sm;
+			h5{
+				margin-bottom:$tny;
+				color:$light-grey;
+			}
+			h4{
+				font-size:$lgFontSize;
+				color:$grey;
+				a{
+					color:inherit;
+					text-decoration:none;
+
+					&:hover{
+						color:$black;
+					}
+				}
+			}
+
+			span{
 				display:block;
-				max-height:$lg;
-				max-width:100%;
-				margin:auto;
-				margin-top:$reg;
+				font-family:$body;
+				margin-top:$tny;
+			}
+		}
+
+		.copyright{
+			font-size:11px;
+			font-family:$body;
+			text-align:center;
+		}
+	}
+
+	.divide{
+		clear:both;
+		width:300px;
+		height:1px;
+		background-color:$lighter-grey;
+		margin:$reg auto;
+	}
+
+	input[type="text"],input[type="email"]{
+		padding:$tny;
+		border:1px solid $light-grey;
+		color:$grey;
+
+		&::-webkit-input-placeholder {
+			color: $grey;
+			@include transition(0.2s);
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+			color: $grey;
+			@include transition(0.2s);
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+			color: $grey;
+			@include transition(0.2s);  
+		}
+
+		&:-ms-input-placeholder {  
+			color: $grey;
+			@include transition(0.2s);  
+		}
+
+		@include transition(0.2s);
+
+		&:focus{
+			border-color:$green;
+			color:$green;
+
+			&::-webkit-input-placeholder {
+				color: $green;
+			}
+
+			&:-moz-placeholder { /* Firefox 18- */
+				color: $green;  
+			}
+
+			&::-moz-placeholder {  /* Firefox 19+ */
+				color: $green;  
+			}
+
+			&:-ms-input-placeholder {  
+				color: $green;  
 			}
 		}
 	}
 
-	.view-all{
-		display:block;
-		width:$xl;
-		margin:auto;
-		text-align:center;
-		clear:both;
-		padding-top:$reg;
-		font-family:$body;
-		color:$grey;
-		text-decoration:none;
-		@include transition(0.2s);
+	button[type="submit"]{
+		border:none;
+		background-color:$black;
+		color:white;
+		padding:$tny $sm;
+		cursor:pointer;
 
 		&:hover{
 			color:$green;
 		}
 	}
-}
 
-.process-section{
-	h4{
-		margin-top:$lg;
-		font-size: $xxlFontSize;
-	}
 
-	span{
-		font-family: $body;
-	}
+	//--------------------------Home Page
+	.hero{
+		background-color:$lighter-grey;
+		height:100vh;
+		position:relative;
 
-	.content{
-		width:800px;
-	}
+		.particles{
+			position:absolute;
+			height: 100%;
+			width:100%;
+			z-index:10;
+			overflow:hidden;
+			
 
-	.left{
-		@include span(2);
-	}
+			.p{
+				position:fixed;
+				left:0px;
+				top:50px;
+				width:1px;
+				height:3px;
+				background-color:$green;
+				position:absolute;
+				animation-name:particleAnimation;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
 
-	.right{
-		@include span(2);
+			}
+			.p::before{
+				position:absolute;
+				display:block;
+				content:"";
+				width:100px;
+				right:1px;
+				top:0px;
+				height:3px;
+				background: linear-gradient(to right, rgba($green,0) 0%,rgba($green,0.4) 100%); 
+			}
+			.p-1{
+				animation-duration:10s;
+			}
+			.p-2{
+				animation-duration:5s;
+				top:60%;
+			}
+			.p-3{
+				animation-duration:20s;
+				top:90%;
+			}
+			.p-4{
+				animation-duration:8s;
+				top:82%;
+			}
+			.p-5{
+				animation-duration:12s;
+				top:32%;
+			}
+			.p-6{
+				animation-duration:7s;
+				top:40%;
+			}
+			.p-7{
+				animation-duration:11s;
+				top:78%;
+			}
+			.p-8{
+				animation-duration:9s;
+				top:54%;
+			}
+			.p-9{
+				animation-duration:6s;
+				top:70%;
+			}
+			.p-10{
+				animation-duration:8s;
+				top:82%;
+			}
+		}
+
+		.focus{
+			top:30vh;
+			position:absolute;
+			z-index:20;
+		}
+
+		h2{
+			font-size:$xxl;
+		}
 
 		p{
+			padding-left:$tny;
+		}
+
+		.arrow{
+			height:$med;
+			width:$med;
+			border-right:2px solid $grey;
+			border-bottom:2px solid $grey;
+			position:absolute;
+			left:50%;
+			top:80vh;
+			@include transform(rotate(45deg));
+			@include animation(color-arrow 2s ease-in-out infinite);
+			@include animation-delay(0.5s);
+		}
+	}
+
+	.work-section, .about-section, .process-section, .contact-section{
+		h3{
+			text-align:center;
+			font-size:$lgFontSize;
+		}
+
+		.content{
+			margin:$reg auto;
+			width:600px;
+		}
+	}
+
+	.work-section{
+		padding-top:$lg + $sm + $tny;
+		.pieces{
 			margin-top:$lg;
-		}
-	}
-}
 
-//-------------------------All Pages
+			.piece{
+				@include span(1);
+				position:relative;
+				min-height:$xxl;
 
-.page{
-	padding-top:$xxl;
-	min-height:60vh;
+				.overlay{
+					position:absolute;
+					left:0;
+					top:0;
+					width:100%;
+					height:100%;
+					display:block;
+					opacity:0;
+					@include linear-gradient(45deg, $green 0%, rgba(255,255,255,0.8) 50%);
+					@include transition(0.2s);
 
-	.content{
-		width:700px;
-		margin:auto;
-	}
+					&:hover{
+						opacity:0.5;
+						
+					}
+				}
 
-	p{
-		margin:$reg 0;
-		line-height:1.6;
-	}
-
-	h2{
-		text-align:center;
-		margin-bottom:$sm;
-		font-size:$xlFontSize;
-	}
-
-	h3{
-		margin-bottom:-($sm);
-		font-size: $medFontSize;
-	}
-}
-
-//-------------------------About Page
-
-.about{
-
-}
-
-
-//-------------------------Skills Page
-
-.skills{
-
-	h3{
-		margin:$reg;
-	}
-
-	.tool{
-		width:600px;
-		margin:auto;
-
-		input{
-			width:300px;
-			display:block;
-			margin:$sm auto;
-		}
-
-		h4{
-			margin-bottom:-($sm);
-		}
-	}
-
-	.example{
-		@include span(1);
-		position:relative;
-		min-height:$xxl;
-		img{
-			display:block;
-			max-height:$lg;
-			max-width:100%;
-			margin:auto;
-			margin-top:$reg;
-		}
-
-		&:nth-child(4n + 3){
-			@include last();
-		}
-	}
-}
-
-//-----------------------Work Page
-
-.work{
-	.pieces{
-		margin-top:$lg;
-
-		.piece{
-			@include span(1 of 3);
-			position:relative;
-			min-height:$xxl;
-
-			.overlay{
-				position:absolute;
-				left:0;
-				top:0;
-				width:100%;
-				height:100%;
-				display:block;
-				opacity:0;
-				@include linear-gradient(45deg, $green 0%, rgba(255,255,255,0.8) 50%);
-				@include transition(0.2s);
-
-				&:hover{
-					opacity:0.5;
-					
+				img{
+					display:block;
+					max-height:$lg;
+					max-width:100%;
+					margin:auto;
+					margin-top:$reg;
 				}
 			}
-
-			img{
-				display:block;
-				max-height:$lg;
-				max-width:100%;
-				margin:auto;
-				margin-top:$reg;
-			}
 		}
-	}
-}
 
-//------------------------Blog Page
-
-.blog{
-	h2{
-		margin-bottom: $lg;
-	}
-
-	h4{
-		margin-bottom:$sm;
-		color:$grey;
-	}
-
-	h3{
-		font-size:$xxlFontSize;
-		a{
-			color:inherit;
+		.view-all{
+			display:block;
+			width:$xl;
+			margin:auto;
+			text-align:center;
+			clear:both;
+			padding-top:$reg;
+			font-family:$body;
+			color:$grey;
 			text-decoration:none;
 			@include transition(0.2s);
 
@@ -656,320 +489,487 @@ button[type="submit"]{
 		}
 	}
 
-	.date, .snippet{
-		display:block;
-		font-family:$body;
-		margin-top:$reg;
-	}
-
-	.snippet{
-		width:400px;
-		line-height:1.5;
-	}
-
-	.post{
-		margin-bottom:$reg;
-	}
-
-	.show-more{
-		display:block;
-		text-align:center;
-		color:$grey;
-		font-family:$body;
-		text-decoration:none;
-		@include transition(0.2s);
-
-		&:hover{
-			color:$green;
-		}
-	}
-}
-
-.post-page{
-	.date{
-		text-align:center;
-		display:block;
-		font-family:$body;
-	}
-
-	h4{
-		margin-top:$med;
-		margin-bottom:-($sm);
-	}
-}
-
-
-//------------------------Contact Page
-
-.contact, .contact-section{
-	form{
-		padding:$sm 0;
-	}
-
-	input[type="text"],input[type="email"], textarea{
-		box-sizing:border-box;
-		padding:$mic $tny;
-		border:1px solid $grey;
-		color:$grey;
-
-		@include transition(0.2s);
-
-		&::-webkit-input-placeholder {
-			color: $grey;
-			@include transition(0.2s);
+	.process-section{
+		h4{
+			margin-top:$lg;
+			font-size: $xxlFontSize;
 		}
 
-		&:-moz-placeholder { /* Firefox 18- */
-			color: $grey;
-			@include transition(0.2s);
+		span{
+			font-family: $body;
 		}
 
-		&::-moz-placeholder {  /* Firefox 19+ */
-			color: $grey;
-			@include transition(0.2s);  
+		.content{
+			width:800px;
 		}
 
-		&:-ms-input-placeholder {  
-			color: $grey;
-			@include transition(0.2s);  
+		.left{
+			@include span(2);
 		}
 
-		&:focus{
-			border-color:$black;
-		}
-	}
+		.right{
+			@include span(2);
 
-	input.ng-invalid.ng-touched.ng-dirty, textarea.ng-invalid.ng-touched.ng-dirty{
-		border-color:red;
-		color:red;
-
-		&::-webkit-input-placeholder {
-			color: red;
-			@include transition(0.2s);
-		}
-
-		&:-moz-placeholder { /* Firefox 18- */
-			color: red;
-			@include transition(0.2s);
-		}
-
-		&::-moz-placeholder {  /* Firefox 19+ */
-			color: red;
-			@include transition(0.2s);  
-		}
-
-		&:-ms-input-placeholder {  
-			color: red;
-			@include transition(0.2s);  
-		}
-
-		&:focus{
-			border-color:red;
-			color:red;
-
-			&::selection{
-				background-color:red;
+			p{
+				margin-top:$lg;
 			}
 		}
 	}
 
-	input.ng-valid.ng-touched.ng-dirty, textarea.ng-valid.ng-touched.ng-dirty{
-		border-color:$green;
-		color:$green;
+	//-------------------------All Pages
 
-		&:focus{
-			border-color:$green;
+	.page{
+		padding-top:$xxl;
+		min-height:60vh;
+
+		.content{
+			width:700px;
+			margin:auto;
+		}
+
+		p{
+			margin:$reg 0;
+			line-height:1.6;
+		}
+
+		h2{
+			text-align:center;
+			margin-bottom:$sm;
+			font-size:$xlFontSize;
+		}
+
+		h3{
+			margin-bottom:-($sm);
+			font-size: $medFontSize;
 		}
 	}
 
-	input[type="text"],input[type="email"]{
-		margin-bottom:$reg;
-		@include span(2 of 4);
-	}
-	input[type="email"]{
-		@include last();
-	}
-	textarea{
-		margin-bottom:$reg;
-		@include span(4);
-		resize:none;
-	}
-	button[type="submit"]{
-		box-sizing:border-box;
-		width:50%;
-		margin-left:25%
+	//-------------------------About Page
+
+	.about{
+
 	}
 
-	.email{
-		text-align:center;
-		font-family:$accent;
-	}
-}
 
-//-------------------------------------Work Pages
+	//-------------------------Skills Page
 
-.work-page{
-	.prev,.next{
-		position:absolute;
-		font-family:$body;
-	}
+	.skills{
 
-	.prev{
-		left:0;
-	}
-
-	.next{
-		right:0;
-	}
-
-	.date{
-		text-align:center;
-		display:block;
-	}
-
-	span{
-		font-family:$body;
-	}
-
-	.panel{
-		margin-top:$lg;
-		img{
-			max-width:100%;
+		h3{
+			margin:$reg;
 		}
 
-		.caption{
-			font-family:$accent;
+		.tool{
+			width:600px;
+			margin:auto;
+
+			input{
+				width:300px;
+				display:block;
+				margin:$sm auto;
+			}
+
+			h4{
+				margin-bottom:-($sm);
+			}
+		}
+
+		.example{
+			@include span(1);
+			position:relative;
+			min-height:$xxl;
+			img{
+				display:block;
+				max-height:$lg;
+				max-width:100%;
+				margin:auto;
+				margin-top:$reg;
+			}
+
+			&:nth-child(4n + 3){
+				@include last();
+			}
+		}
+	}
+
+	//-----------------------Work Page
+
+	.work{
+		.pieces{
+			margin-top:$lg;
+
+			.piece{
+				@include span(1 of 3);
+				position:relative;
+				min-height:$xxl;
+
+				.overlay{
+					position:absolute;
+					left:0;
+					top:0;
+					width:100%;
+					height:100%;
+					display:block;
+					opacity:0;
+					@include linear-gradient(45deg, $green 0%, rgba(255,255,255,0.8) 50%);
+					@include transition(0.2s);
+
+					&:hover{
+						opacity:0.5;
+						
+					}
+				}
+
+				img{
+					display:block;
+					max-height:$lg;
+					max-width:100%;
+					margin:auto;
+					margin-top:$reg;
+				}
+			}
+		}
+	}
+
+	//------------------------Blog Page
+
+	.blog{
+		h2{
+			margin-bottom: $lg;
+		}
+
+		h4{
+			margin-bottom:$sm;
+			color:$grey;
+		}
+
+		h3{
+			font-size:$xxlFontSize;
+			a{
+				color:inherit;
+				text-decoration:none;
+				@include transition(0.2s);
+
+				&:hover{
+					color:$green;
+				}
+			}
+		}
+
+		.date, .snippet{
+			display:block;
+			font-family:$body;
+			margin-top:$reg;
+		}
+
+		.snippet{
+			width:400px;
+			line-height:1.5;
+		}
+
+		.post{
+			margin-bottom:$reg;
+		}
+
+		.show-more{
+			display:block;
+			text-align:center;
+			color:$grey;
+			font-family:$body;
+			text-decoration:none;
+			@include transition(0.2s);
+
+			&:hover{
+				color:$green;
+			}
+		}
+	}
+
+	.post-page{
+		.date{
+			text-align:center;
+			display:block;
+			font-family:$body;
+		}
+
+		h4{
+			margin-top:$med;
+			margin-bottom:-($sm);
+		}
+	}
+
+
+	//------------------------Contact Page
+
+	.contact, .contact-section{
+		form{
+			padding:$sm 0;
+		}
+
+		input[type="text"],input[type="email"], textarea{
+			box-sizing:border-box;
+			padding:$mic $tny;
+			border:1px solid $grey;
 			color:$grey;
 
+			@include transition(0.2s);
+
+			&::-webkit-input-placeholder {
+				color: $grey;
+				@include transition(0.2s);
+			}
+
+			&:-moz-placeholder { /* Firefox 18- */
+				color: $grey;
+				@include transition(0.2s);
+			}
+
+			&::-moz-placeholder {  /* Firefox 19+ */
+				color: $grey;
+				@include transition(0.2s);  
+			}
+
+			&:-ms-input-placeholder {  
+				color: $grey;
+				@include transition(0.2s);  
+			}
+
+			&:focus{
+				border-color:$black;
+			}
 		}
-	}
 
-	.full{
-		width:100%;
-	}
+		input.ng-invalid.ng-touched.ng-dirty, textarea.ng-invalid.ng-touched.ng-dirty{
+			border-color:red;
+			color:red;
 
-	.work-logo{
-		text-align:center;
-		display:block;
-		margin:auto;
-	}
+			&::-webkit-input-placeholder {
+				color: red;
+				@include transition(0.2s);
+			}
 
-	.view-site{
-		background-color:$black;
-		display:block;
-		padding:$sm;
-		color:$white;
-		width:$xxl;
-		margin:$reg auto;
-		font-size:$regFontSize;
-		font-family:$body;
-		text-decoration:none;
-		text-align:center;
+			&:-moz-placeholder { /* Firefox 18- */
+				color: red;
+				@include transition(0.2s);
+			}
 
-		&:hover{
+			&::-moz-placeholder {  /* Firefox 19+ */
+				color: red;
+				@include transition(0.2s);  
+			}
+
+			&:-ms-input-placeholder {  
+				color: red;
+				@include transition(0.2s);  
+			}
+
+			&:focus{
+				border-color:red;
+				color:red;
+
+				&::selection{
+					background-color:red;
+				}
+			}
+		}
+
+		input.ng-valid.ng-touched.ng-dirty, textarea.ng-valid.ng-touched.ng-dirty{
+			border-color:$green;
 			color:$green;
+
+			&:focus{
+				border-color:$green;
+			}
 		}
-	}
-}
 
-//-----------------------------------------Specific Work Pages
+		input[type="text"],input[type="email"]{
+			margin-bottom:$reg;
+			@include span(2 of 4);
+		}
+		input[type="email"]{
+			@include last();
+		}
+		textarea{
+			margin-bottom:$reg;
+			@include span(4);
+			resize:none;
+		}
+		button[type="submit"]{
+			box-sizing:border-box;
+			width:50%;
+			margin-left:25%
+		}
 
-
-//-------------------------ABA Retirement
-
-.aba{
-	.aba-logo{
-		text-align:center;
-		display:block;
-		margin:auto;
-	}
-
-	.full{
-		margin:$reg 0;
-		background-image:url('img/abaretirement/bg-bubbles.jpg');
-		background-size:100%;
-	}
-}
-
-//------------------------Cards & Pockets
-
-.cards-and-pockets{
-	.candp-logo{
-		text-align:center;
-		display:block;
-		margin:auto;
-	}
-}
-
-//------------------------Slimpickin
-
-.slimpickin{
-	.view-on-github{
-		background-color:$black;
-		display:block;
-		padding:$sm;
-		color:$white;
-		width:$xxl;
-		margin:$reg auto;
-		font-size:$regFontSize;
-		font-family:$body;
-		text-decoration:none;
-		text-align:center;
-
-		&:hover{
-			color:$green;
+		.email{
+			text-align:center;
+			font-family:$accent;
 		}
 	}
 
-	h3{
-		margin-top:$reg;
-	}
-}
+	//-------------------------------------Work Pages
 
-//------------------------Enigma-js
+	.work-page{
+		.prev,.next{
+			position:absolute;
+			font-family:$body;
+		}
 
-.enigma{
-	h3{
-		margin-top:$reg;
-	}
+		.prev{
+			left:0;
+		}
 
-	.view-on-github, .view-on-npm{
-		background-color:$black;
-		display:inline-block;
-		padding:$sm;
-		color:$white;
-		width:$xxl;
-		margin:$reg auto;
-		font-size:$regFontSize;
-		font-family:$body;
-		text-decoration:none;
-		text-align:center;
+		.next{
+			right:0;
+		}
 
-		&:hover{
-			color:$green;
+		.date{
+			text-align:center;
+			display:block;
+		}
+
+		span{
+			font-family:$body;
+		}
+
+		.panel{
+			margin-top:$lg;
+			img{
+				max-width:100%;
+			}
+
+			.caption{
+				font-family:$accent;
+				color:$grey;
+
+			}
+		}
+
+		.full{
+			width:100%;
+		}
+
+		.work-logo{
+			text-align:center;
+			display:block;
+			margin:auto;
+		}
+
+		.view-site{
+			background-color:$black;
+			display:block;
+			padding:$sm;
+			color:$white;
+			width:$xxl;
+			margin:$reg auto;
+			font-size:$regFontSize;
+			font-family:$body;
+			text-decoration:none;
+			text-align:center;
+
+			&:hover{
+				color:$green;
+			}
 		}
 	}
 
-	.links{
-		text-align:center;
+	//-----------------------------------------Specific Work Pages
+
+
+	//-------------------------ABA Retirement
+
+	.aba{
+		.aba-logo{
+			text-align:center;
+			display:block;
+			margin:auto;
+		}
+
+		.full{
+			margin:$reg 0;
+			background-image:url('img/abaretirement/bg-bubbles.jpg');
+			background-size:100%;
+		}
 	}
-}
 
-//-----------------------Enigmate
+	//------------------------Cards & Pockets
 
-.enigmate{
-
-}
-
-//-----------------------Free Post
-
-.free-post{
-	.free-post-logo{
-		width:$xxl * 3;
-		margin:auto;
-		display:block;
+	.cards-and-pockets{
+		.candp-logo{
+			text-align:center;
+			display:block;
+			margin:auto;
+		}
 	}
-}
+
+	//------------------------Slimpickin
+
+	.slimpickin{
+		.view-on-github{
+			background-color:$black;
+			display:block;
+			padding:$sm;
+			color:$white;
+			width:$xxl;
+			margin:$reg auto;
+			font-size:$regFontSize;
+			font-family:$body;
+			text-decoration:none;
+			text-align:center;
+
+			&:hover{
+				color:$green;
+			}
+		}
+
+		h3{
+			margin-top:$reg;
+		}
+	}
+
+	//------------------------Enigma-js
+
+	.enigma{
+		h3{
+			margin-top:$reg;
+		}
+
+		.view-on-github, .view-on-npm{
+			background-color:$black;
+			display:inline-block;
+			padding:$sm;
+			color:$white;
+			width:$xxl;
+			margin:$reg auto;
+			font-size:$regFontSize;
+			font-family:$body;
+			text-decoration:none;
+			text-align:center;
+
+			&:hover{
+				color:$green;
+			}
+		}
+
+		.links{
+			text-align:center;
+		}
+	}
+
+	//-----------------------Enigmate
+
+	.enigmate{
+
+	}
+
+	//-----------------------Free Post
+
+	.free-post{
+		.free-post-logo{
+			width:$xxl * 3;
+			margin:auto;
+			display:block;
+		}
+	}
 }
 
 //mobile

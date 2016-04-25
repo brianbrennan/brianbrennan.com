@@ -284,6 +284,14 @@ footer {
         color: #ddd; }
         footer .social span a:hover {
           color: #61D2B4; }
+    footer .social .codepen {
+      width: 60px;
+      height: 60px;
+      margin-bottom: -15px;
+      background-image: url('img/codepen.png');
+      background-size: 100%; }
+      footer .social .codepen:hover {
+        background-image: url('img/codepen-hover.png'); }
   footer .recent-post {
     display: inline-block;
     padding: 0 15px; }

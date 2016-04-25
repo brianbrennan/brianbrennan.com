@@ -195,6 +195,18 @@ footer{
 				}
 			}
 		}
+
+		.codepen{
+			width:$lg;
+			height:$lg;
+			margin-bottom:-($sm);
+			background-image: url('img/codepen.png');
+			background-size:100%;
+
+			&:hover{
+				background-image: url('img/codepen-hover.png');
+			}
+		}
 	}
 
 	.recent-post{

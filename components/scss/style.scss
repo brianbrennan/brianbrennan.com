@@ -42,33 +42,33 @@ blockquote{
 }
 
 pre{
-  counter-reset:line-numbering;
-  background:$lighter-grey;
-  padding:$sm $sm 0 $sm;
-  display:block;
-  color:$black;
-  line-height:140%;
-  font-family: $mono;
-  font-size:$smFontSize;
-  white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -o-pre-wrap;
-  word-wrap: break-word;
+	counter-reset:line-numbering;
+	background:$lighter-grey;
+	padding:$sm $sm 0 $sm;
+	display:block;
+	color:$black;
+	line-height:140%;
+	font-family: $mono;
+	font-size:$smFontSize;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
 
-    .line::before {
-      content: counter(line-numbering);
-      counter-increment: line-numbering;
-      padding-right: 1em;
-      /* space after numbers */
-      padding-left:8px;
-      width: 1.5em;
-      text-align: right;
-      opacity: 0.5;
-      color:$grey;
-  }
-  	script{
-  		display:inline-block;
-  	}
+	.line::before {
+		content: counter(line-numbering);
+		counter-increment: line-numbering;
+		padding-right: 1em;
+		/* space after numbers */
+		padding-left:8px;
+		width: 1.5em;
+		text-align: right;
+		opacity: 0.5;
+		color:$grey;
+	}
+	script{
+		display:inline-block;
+	}
 }
 
 i{
@@ -546,6 +546,10 @@ button[type="submit"]{
 
 .skills{
 
+	h3{
+		margin:$reg;
+	}
+
 	.tool{
 		width:600px;
 		margin:auto;
@@ -558,6 +562,23 @@ button[type="submit"]{
 
 		h4{
 			margin-bottom:-($sm);
+		}
+	}
+
+	.example{
+		@include span(1);
+		position:relative;
+		min-height:$xxl;
+		img{
+			display:block;
+			max-height:$lg;
+			max-width:100%;
+			margin:auto;
+			margin-top:$reg;
+		}
+
+		&:nth-child(4n + 3){
+			@include last();
 		}
 	}
 }

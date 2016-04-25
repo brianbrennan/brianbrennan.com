@@ -1,73 +1,80 @@
 [
 	{
-		"id":1,
+		"id":3,
 		"name":"ABA Retirement",
 		"thumbnail": "components/img/abaretirement/logo.png",
 		"images": "",
 		"url": "http://new.abaretirement.com",
 		"page":"/aba-retirement",
 		"description":"",
-		"tags": ["Web Design", "Photoshop", "Illustrator", "Creative Cloud", "Creative Suite"]
+		"tags": ["Web Design", "Photoshop", "Illustrator", "Creative Cloud", "Creative Suite"],
+		"display": true
 	},
 	{
-		"id":2,
+		"id":11,
 		"name": "Stonehill Palette",
 		"thumbnail": "components/img/stonehill-palette/logo.png",
 		"images": "",
 		"url": "http://stonehillpalette.com",
 		"page": "/stonehill-palette",
 		"description": "",
-		"tags": ["Web Development", "JavaScript", "Sass", "CSS", "JQuery"]
+		"tags": ["Web Development", "JavaScript", "Sass", "CSS", "JQuery"],
+		"display": false
 	},
 	{
-		"id":3,
+		"id":7,
 		"name": "Enigma.js",
 		"thumbnail":"components/img/enigma-js/logo.png",
 		"images":"",
 		"url":"https://www.npmjs.com/package/enigma.js",
 		"page": "/enigma-js",
 		"description": "",
-		"tags": ["Node","Javascript","NPM"]
+		"tags": ["Node","Javascript","NPM"],
+		"display": true
 	},
 	{
-		"id":4,
+		"id":2,
 		"name": "Slimpickin",
 		"thumbnail":"components/img/slimpickin/logo.png",
 		"images":"",
 		"url":"https://github.com/brianbrennan/slimpickin",
 		"page": "/slimpickin",
 		"description": "",
-		"tags": ["Javascript", "JQuery"]
+		"tags": ["Javascript", "JQuery"],
+		"display": true
 	},
 	{
-		"id":5,
+		"id":4,
 		"name": "Enigmate",
 		"thumbnail":"components/img/enigmate/logo.png",
 		"images":"",
 		"url":"https://github.com/brianbrennan/enigmate",
 		"page": "/enigmate",
 		"description": "",
-		"tags": ["Javascript", "Electron", "HTML", "CSS", "Sass", "Desktop Development", "Web Development"]
+		"tags": ["Javascript", "Electron", "HTML", "CSS", "Sass", "Desktop Development", "Web Development"],
+		"display": true
 	},
 	{
-		"id": 6,
+		"id": 1,
 		"name": "Cards & Pockets",
 		"thumbnail": "components/img/cardsandpockets/logo.gif",
 		"images":"",
 		"url":"http://new.cardsandpockets.com",
 		"page":"/cards-and-pockets",
 		"description":"",
-		"tags":["JavaScript","JQuery","Web Design","Web Development","Sass","HTML","CSS",".NET","SQL"]
+		"tags":["JavaScript","JQuery","Web Design","Web Development","Sass","HTML","CSS",".NET","SQL"],
+		"display": true
 	},
 	{
-		"id": 7,
+		"id": 6,
 		"name": "Free Post",
 		"thumbnail": "components/img/free-post/logo.svg",
 		"images": "",
 		"url": "freepost.co",
 		"page": "/free-post",
 		"description": "",
-		"tags":["WordPress","PHP","SCSS","CSS","Web Development","Web Design"]
+		"tags":["WordPress","PHP","SCSS","CSS","Web Development","Web Design"],
+		"display": true
 	},
 	{
 		"id": 8,
@@ -77,17 +84,19 @@
 		"url": "Broctonspromise.org",
 		"page": "/brocktons-promise",
 		"description": "",
-		"tags":["WordPress","PHP","SCSS","CSS","Web Development","Web Design"]
+		"tags":["WordPress","PHP","SCSS","CSS","Web Development","Web Design"],
+		"display": false
 	},
 	{
-		"id": 9,
+		"id": 3,
 		"name": "Game Grumps",
 		"thumbnail": "components/img/game-grumps/logo.png",
 		"images": "",
 		"url": "gamegrumps.co",
 		"page": "/game-grumps",
 		"description": "",
-		"tags":["Angular","API","SPA","SCSS","CSS","Web Development","Web Design"]
+		"tags":["Angular","API","SPA","SCSS","CSS","Web Development","Web Design"],
+		"display": true
 	}, 
 	{
 		"id": 10,
@@ -97,6 +106,7 @@
 		"url": "mcmahonadvisorygroup.com",
 		"page": "/mcmahon-advisory-group",
 		"description": "",
-		"tags":["Web Design","Wix"]
+		"tags":["Web Design","Wix"],
+		"display": false
 	}
 ]

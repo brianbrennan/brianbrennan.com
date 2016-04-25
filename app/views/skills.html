@@ -11,6 +11,14 @@
 					<p>{{skill.description}}</p>
 				</div>
 			</div>
+
+			
+		</div>
+
+		<h3 ng-show="skillInput">Examples</h3>
+
+		<div class="example" ng-repeat="work in works | filter: {tags: skillInput}" ng-if="skillInput">
+			<a ng-href="/#/{{work.page}}"><img src="{{work.thumbnail}}" alt=""></a>
 		</div>
 	</div>
 </div>

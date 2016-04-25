@@ -3,7 +3,7 @@
 		<h2>Work</h2>
 
 		<div class="pieces">
-			<div class="piece" ng-repeat="piece in works | orderBy: 'id':true">
+			<div class="piece" ng-repeat="piece in works | orderBy: 'id':false"  ng-show="piece.display">
 				<a href="/#{{piece.page}}">
 					<div class="overlay"></div>
 					<img src="{{piece.thumbnail}}" alt="">

@@ -30,7 +30,7 @@
 		<h3>Featured Work</h3>
 		<div class="pieces">
 
-			<div class="piece" ng-repeat="piece in works | orderBy: 'id':true | limitTo: 4 ">
+			<div class="piece" ng-repeat="piece in works | orderBy: 'id':false | limitTo: 4"  ng-show="piece.display">
 				<a href="/#{{piece.page}}">
 					<div class="overlay"></div>
 					<img src="{{piece.thumbnail}}" alt="">

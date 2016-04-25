@@ -2,28 +2,28 @@
 	{
 		"id": 1,
 		"title":"A Breakdown of API's",
-		"date": "10.27.2015",
+		"date": "12.27.2015",
 		"page": "/blog/api-breakdown",
 		"snippet":"A brief look into what API's are, and why there are so important."
 	},
 	{
 		"id": 2,
 		"title": "Rebuilding Enigma",
-		"date": "11.3.2015",
+		"date": "2.3.2016",
 		"page": "/blog/rebuilding-enigma",
 		"snippet": "An in depth look at creating a simple Enigma-like encryption program."
 	},
 	{
 		"id": 3,
 		"title": "Online Education",
-		"date": "11.30.2015",
+		"date": "2.30.2016",
 		"page": "/blog/online-education",
 		"snippet": "A comparison of eLearning platforms"
 	},
 	{
 		"id": 4,
 		"title": "Setting Up Sass",
-		"date":"12.22.15",
+		"date":"3.22.16",
 		"page": "/blog/setting-up-sass",
 		"snippet":"How to set up Sass in your Workflow"
 	}

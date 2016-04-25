@@ -235,6 +235,12 @@ footer{
 			margin-top:$tny;
 		}
 	}
+
+	.copyright{
+		font-size:11px;
+		font-family:$body;
+		text-align:center;
+	}
 }
 
 .divide{
@@ -590,7 +596,7 @@ button[type="submit"]{
 		margin-top:$lg;
 
 		.piece{
-			@include span(1);
+			@include span(1 of 3);
 			position:relative;
 			min-height:$xxl;
 
@@ -789,6 +795,11 @@ button[type="submit"]{
 		box-sizing:border-box;
 		width:50%;
 		margin-left:25%
+	}
+
+	.email{
+		text-align:center;
+		font-family:$accent;
 	}
 }
 

@@ -82,7 +82,7 @@
 	<header id="mobile-header">
 		<div class="logo-box">
 			<a ng-href="/#/">
-				<svg version="1.1" id="" class="mobile-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 194.5 70.2" enable-background="new 0 0 194.5 70.2" xml:space="preserve">
+				<svg version="1.1" id="mobile-logo" class="mobile-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 194.5 70.2" enable-background="new 0 0 194.5 70.2" xml:space="preserve">
 					<g>
 						<path d="M12.7,0.8c0-0.4,0.4-0.8,1-0.8h19.1c0.6,0,0.9,0.4,0.9,0.8v11.4c0,0.4-0.3,0.8-0.9,0.8h-6.7v44.1h6.7
 						c0.6,0,0.9,0.4,0.9,0.8v11.4c0,0.4-0.3,0.8-0.9,0.8H13.7c-0.6,0-1-0.4-1-0.8V41.8c-4.1-2-8-4.1-12.1-6c-0.8-0.3-0.8-1.1,0-1.4
@@ -178,6 +178,29 @@ ga('create', 'UA-54849517-3', 'auto');
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-animate.js"></script>
   <script src="components/lib/slimpickin/dist/slimpickin.min.js"></script>
   <script src="app/app.min.js"></script>
+  <script type="text/javascript">
+
+  S.ready(function(){
+  	s('.nav-toggle').on('click', function(){
+  		if(!s('.nav-list').hasClass('active')[0])
+  			s('.nav-list').addClass('active');
+  		else
+  			s('.nav-list').removeClass('active');
+  		if(!s(this).hasClass('active')[0])
+  			s(this).addClass('active');
+  		else
+  			s(this).removeClass('active');
+
+  	});
+
+  	s('.nav-list a').on('click', function(){
+  		s('.nav-list').removeClass('active');
+  		s('.nav-toggle').removeClass('active');
+  	});
+
+  });
+
+  </script>
   <script src="components/script.js"></script>
   <!-- <script src="//localhost:35729/livereload.js"></script> -->
 

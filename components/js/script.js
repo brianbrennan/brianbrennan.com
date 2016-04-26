@@ -21,38 +21,38 @@ S.ready(function(){
 	
 	//---------------------Navigation for Mobile
 
-	s('.nav-toggle').on('click', function(){
-		if(!s('.nav-list').hasClass('active')[0])
-			s('.nav-list').addClass('active');
-		else
-			s('.nav-list').removeClass('active');
-		if(!s(this).hasClass('active')[0])
-			s(this).addClass('active');
-		else
-			s(this).removeClass('active');
+	// s('.nav-toggle').on('click', function(){
+	// 	if(!s('.nav-list').hasClass('active')[0])
+	// 		s('.nav-list').addClass('active');
+	// 	else
+	// 		s('.nav-list').removeClass('active');
+	// 	if(!s(this).hasClass('active')[0])
+	// 		s(this).addClass('active');
+	// 	else
+	// 		s(this).removeClass('active');
 
-	});
+	// });
 
-	s('.nav-toggle').on('touchstart', function(){
-		if(!s('.nav-list').hasClass('active')[0])
-			s('.nav-list').addClass('active');
-		else
-			s('.nav-list').removeClass('active');
-		if(!s(this).hasClass('active')[0])
-			s(this).addClass('active');
-		else
-			s(this).removeClass('active');
-	});
+	// s('.nav-toggle').on('touchend', function(){
+	// 	if(!s('.nav-list').hasClass('active')[0])
+	// 		s('.nav-list').addClass('active');
+	// 	else
+	// 		s('.nav-list').removeClass('active');
+	// 	if(!s(this).hasClass('active')[0])
+	// 		s(this).addClass('active');
+	// 	else
+	// 		s(this).removeClass('active');
+	// });
 
-	s('.nav-list a').on('click', function(){
-		s('.nav-list').removeClass('active');
-		s('.nav-toggle').removeClass('active');
-	});
+	// s('.nav-list a').on('click', function(){
+	// 	s('.nav-list').removeClass('active');
+	// 	s('.nav-toggle').removeClass('active');
+	// });
 
-	s('.nav-list a').on('touchstart', function(){
-		s('.nav-list').removeClass('active');
-		s('.nav-toggle').removeClass('active');
-	});
+	// s('.nav-list a').on('touchend', function(){
+	// 	s('.nav-list').removeClass('active');
+	// 	s('.nav-toggle').removeClass('active');
+	// });
 
 
 

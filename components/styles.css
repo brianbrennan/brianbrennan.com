@@ -849,6 +849,10 @@ button[type="submit"] {
   margin: auto;
   display: block; }
 
+.game-grumps .work-logo {
+  width: 400px;
+  margin: auto; }
+
 @media  (min-width: 0) and (max-width: 760px) {
   #mobile-header {
     display: block;
@@ -877,7 +881,6 @@ button[type="submit"] {
     float: right;
     position: fixed;
     z-index: 200;
-    cursor: pointer;
     padding: 15px;
     background: rgba(239, 239, 239, 0.9);
     margin: 8px;

@@ -9,11 +9,11 @@ angular.module('contactCtrl', [])
 				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 			})
 			.success( function(data) {
-				if(data.success)
-					$scope.success =  true;
-				else
-					$scope.error = true;
-				
+				$scope.success =  true;
 			} )
+
+			.error(function(data){
+				$scope.error = true;
+			})
 		}
 	});

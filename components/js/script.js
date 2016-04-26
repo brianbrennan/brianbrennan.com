@@ -21,49 +21,61 @@ S.ready(function(){
 	
 	//---------------------Navigation for Mobile
 
-	S.ready(function(){
-		s('.nav-toggle').on('click', function(){
-			if(window.innerWidth <= 780){
-				if(!s('.nav-list').hasClass('active')[0])
-					s('.nav-list').addClass('active');
-				else
-					s('.nav-list').removeClass('active');
-				if(!s(this).hasClass('active')[0])
-					s(this).addClass('active');
-				else
-					s(this).removeClass('active');
-			}
-
-		});
-
-		s('.nav-list a').on('click', function(){
-			if(window.innerWidth <= 780){
-				s('.nav-list').removeClass('active');
-				s('.nav-toggle').removeClass('active');
-			}
-		});
+	s('.nav-toggle').on('click', function(){
+		if(!s('.nav-list').hasClass('active')[0])
+			s('.nav-list').addClass('active');
+		else
+			s('.nav-list').removeClass('active');
+		if(!s(this).hasClass('active')[0])
+			s(this).addClass('active');
+		else
+			s(this).removeClass('active');
 
 	});
 
-	var didScroll;
-	var lastScrollTop = 0;
-	var delta = 5;
-	var navbarHeight = Number(s('header').css('height')[0].substr(0,s('header').css('height')[0].length - 2));
-
-	window.addEventListener('scroll', function(){
-		didScroll = true;
+	s('.nav-toggle').on('touchstart', function(){
+		if(!s('.nav-list').hasClass('active')[0])
+			s('.nav-list').addClass('active');
+		else
+			s('.nav-list').removeClass('active');
+		if(!s(this).hasClass('active')[0])
+			s(this).addClass('active');
+		else
+			s(this).removeClass('active');
 	});
 
-	setInterval(function() {
-		if(didScroll){
-			hasScrolled();
-			didScroll = false;
-		}
-	}, 250);
+	s('.nav-list a').on('click', function(){
+		s('.nav-list').removeClass('active');
+		s('.nav-toggle').removeClass('active');
+	});
 
-	function hasScrolled(){
-		var st = s('header')[0].offsetTop;
-		console.log(st);
-	}
+	s('.nav-list a').on('touchstart', function(){
+		s('.nav-list').removeClass('active');
+		s('.nav-toggle').removeClass('active');
+	});
 
+
+
+
+	// var didScroll;
+	// var lastScrollTop = 0;
+	// var delta = 5;
+	// var navbarHeight = Number(s('header').css('height')[0].substr(0,s('header').css('height')[0].length - 2));
+
+	// window.addEventListener('scroll', function(){
+	// 	didScroll = true;
+	// });
+
+	// setInterval(function() {
+	// 	if(didScroll){
+	// 		hasScrolled();
+	// 		didScroll = false;
+	// 	}
+	// }, 250);
+
+	// function hasScrolled(){
+	// 	var st = s('header')[0].offsetTop;
+	// 	console.log(st);
+	// }
 });
+

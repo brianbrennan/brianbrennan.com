@@ -999,6 +999,15 @@ button[type="submit"]{
 		}
 	}
 
+	//---------------------Game Grumps
+
+	.game-grumps{
+		.work-logo{
+			width:400px;
+			margin:auto;
+		}
+	}
+
 
 //mobile
 
@@ -1045,7 +1054,6 @@ button[type="submit"]{
 		float:right;
 		position:fixed;
 		z-index:200;
-		cursor:pointer;
 		padding:$sm;
 		background:rgba($lighter-grey, 0.9);
 		margin:$tny;
